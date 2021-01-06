@@ -1,0 +1,20 @@
+<form [formGroup]="form">
+  <mat-card>
+    <h2>Backoffice</h2>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Mot de passe</mat-label>
+      <input matInput placeholder="Mot de passe" type="password" formControlName="password">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onSubmit()">Connexion</button>
+  </mat-card>
+
+  <mat-card>
+    <a routerLink="/forgot-password">Mot de passe oublié</a>
+  </mat-card>
+</form>

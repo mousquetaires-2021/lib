@@ -1,0 +1,62 @@
+<wrapper-connected [title]="user ? 'Modification d\'un utilisateur' : 'Ajout d\'un utilisateur'">
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Nom</mat-label>
+      <input matInput placeholder="Nom" formControlName="lastName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Prénom</mat-label>
+      <input matInput placeholder="Prénom" formControlName="firstName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Sexe</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option value="">Non défini</mat-option>
+        <mat-option value="man">Homme</mat-option>
+        <mat-option value="women">Femme</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Date de naissance</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="bornDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Photo</mat-label>
+      <input matInput placeholder="Photo" formControlName="photo">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Mot de passe</mat-label>
+      <input matInput placeholder="Mot de passe" formControlName="password" type="password">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Type de compte</mat-label>
+      <mat-select formControlName="role">
+        <mat-option *ngFor="let r of USER_ROLES" [value]="r.id">{{r.label}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Autorisé</mat-label>
+      <mat-select formControlName="status">
+        <mat-option [value]="1">Autorisé</mat-option>
+        <mat-option [value]="0">Non autorisé</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onSubmit()">{{ user ? 'Modifier' : 'Ajouter'}}</button>
+    <a routerLink="/users"><button mat-raised-button>Annuler</button></a>
+  </form>
+</wrapper-connected>
