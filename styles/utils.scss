@@ -1,0 +1,4 @@
+$colors: (primary: #00afef, black: #3a3a3a);
+@function fColor($key: "cprimary") {
+	@return map-get($colors, $key);
+}
