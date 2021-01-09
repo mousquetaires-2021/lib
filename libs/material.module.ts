@@ -11,7 +11,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
 	exports: [
 		MatInputModule,
@@ -25,7 +25,8 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 		MatSelectModule,
 		MatSortModule,
 		MatDatepickerModule,
-		MatNativeDateModule
+		MatNativeDateModule,
+		MatProgressSpinnerModule
 	],
 	providers: [
 		{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
