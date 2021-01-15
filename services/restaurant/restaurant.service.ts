@@ -20,4 +20,8 @@ export class RestaurantService {
 	createRestaurant(params) {
 		return this.serverService.post('restaurants/add-restaurant', params).then(this.getRestaurant.bind(this));
 	}
+
+	updateCover(restaurantId, cover) {
+		return this.serverService.put('restaurants/update-cover', { restaurantId, cover });
+	}
 }
