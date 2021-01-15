@@ -10,11 +10,15 @@ export class RestaurantService {
 
 	constructor(private serverService: ServerService) {}
 
-	getRestaurant() {
-		return this.serverService.get('restaurants/get-restaurant').then((data) => {
-			this.restaurants.next(data.data || []);
-			return data.data || [];
-		});
+	getRestaurant(id) {
+		if (id) {
+			return this.serverService.get('restaurants/get/' + id).then((data) => data.data || null);
+		} else {
+			return this.serverService.get('restaurants/get-restaurant').then((data) => {
+				this.restaurants.next(data.data || []);
+				return data.data || [];
+			});
+		}
 	}
 
 	createRestaurant(params) {
@@ -23,5 +27,9 @@ export class RestaurantService {
 
 	updateCover(restaurantId, cover) {
 		return this.serverService.put('restaurants/update-cover', { restaurantId, cover });
+	}
+
+	getRestaurants() {
+		return this.serverService.get('restaurants/list').then((data) => data.data || []);
 	}
 }
