@@ -32,4 +32,12 @@ export class RestaurantService {
 	getRestaurants() {
 		return this.serverService.get('restaurants/list').then((data) => data.data || []);
 	}
+
+	adminUpdateRestaurant(params) {
+		return this.serverService.put('restaurants/admin-update', params);
+	}
+
+	adminCreateRestaurant(params) {
+		return this.serverService.post('restaurants/admin-create', params);
+	}
 }

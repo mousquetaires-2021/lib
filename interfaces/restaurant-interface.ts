@@ -1,4 +1,5 @@
 export interface RestaurantInferface {
+	id?: number;
 	name?: string;
 	photo?: string;
 	status?: string;

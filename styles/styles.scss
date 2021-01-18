@@ -4,12 +4,23 @@
 @import "./form.scss";
 @import "./material.scss";
 
+html,
+body {
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+}
+
 * {
 	color: fColor(black);
 }
 
-button.mat-primary span {
-	color: white;
+button.mat-primary.add-button,
+button[mat-raised-button][color=primary] {
+	span,
+	mat-icon {
+		color: white;
+	}
 }
 
 img {
