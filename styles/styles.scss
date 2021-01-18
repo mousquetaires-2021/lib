@@ -3,6 +3,8 @@
 @import "./utils.scss";
 @import "./form.scss";
 @import "./material.scss";
+@import "./typography.scss";
+@import "./button.scss";
 
 html,
 body {
@@ -12,7 +14,11 @@ body {
 }
 
 * {
-	color: fColor(black);
+	color: fColor(cblack);
+}
+
+.color-primary {
+	color: fColor(primary) !important;
 }
 
 button.mat-primary.add-button,

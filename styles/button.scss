@@ -1,0 +1,13 @@
+button {
+	height: 51px;
+	line-height: 51px;
+	border-radius: 16px;
+	color: fColor(cblack);
+	font-weight: 500;
+
+	&.fill {
+		&.primary {
+			background-color: fColor(primary);
+		}
+	}
+}
