@@ -5,6 +5,10 @@ button {
 	color: fColor(cblack);
 	font-weight: 500;
 
+	&:focus {
+		outline: none;
+	}
+
 	&.fill {
 		&.primary {
 			background-color: fColor(primary);
