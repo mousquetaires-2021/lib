@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'back-icon',
@@ -7,7 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BackIconComponent implements OnInit {
 	@Input() backUrl: string;
-	constructor() {}
+	constructor(private location: Location) {}
 
 	ngOnInit() {}
+
+	onBack() {
+		this.location.back();
+	}
 }
