@@ -47,4 +47,12 @@ export class UserService {
 	mobileValidation(phone, code) {
 		return this.serverService.post('users/mobile-validation', { phone, code }).then((data) => data.data || null);
 	}
+
+	accountForgotPassword(contact) {
+		return this.serverService.put('users/forgot-password', { contact }).then((data) => data.data || null);
+	}
+
+	lightForgotPassword(params) {
+		return this.serverService.put('users/light-forgot-password', params).then((data) => data.data || null);
+	}
 }
