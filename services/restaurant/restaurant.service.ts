@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { RestaurantCriterionsInterface } from 'lib/interfaces/restaurant-criterions-interface';
 import { BehaviorSubject } from 'rxjs';
 import { ServerService } from '../http-server/server.service';
 
@@ -7,6 +8,9 @@ import { ServerService } from '../http-server/server.service';
 })
 export class RestaurantService {
 	restaurants: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+	criterions: BehaviorSubject<RestaurantCriterionsInterface> = new BehaviorSubject<RestaurantCriterionsInterface>(
+		null
+	);
 
 	constructor(private serverService: ServerService) {}
 
@@ -39,5 +43,22 @@ export class RestaurantService {
 
 	adminCreateRestaurant(params) {
 		return this.serverService.post('restaurants/admin-create', params);
+	}
+
+	searchRestaurant(params) {
+		return this.serverService.post('restaurants/search', params).then((data) => data.data || null);
+	}
+
+	getCriterions(): Promise<RestaurantCriterionsInterface> {
+		if (this.criterions.getValue()) {
+			return new Promise((resolve) => {
+				resolve(this.criterions.getValue());
+			});
+		}
+
+		return this.serverService.get('restaurants/criterions').then((data) => data.data || null).then((data) => {
+			this.criterions.next(data);
+			return data;
+		});
 	}
 }
