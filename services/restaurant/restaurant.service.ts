@@ -61,4 +61,14 @@ export class RestaurantService {
 			return data;
 		});
 	}
+
+	theOne({ latitude, longitude }) {
+		return this.serverService.post('restaurants/the-one', { latitude, longitude }).then((data) => data.data || []);
+	}
+
+	getRestaurantsArroundMe({ latitude, longitude }) {
+		return this.serverService
+			.post('restaurants/get-arround-me', { latitude, longitude })
+			.then((data) => data.data || []);
+	}
 }
