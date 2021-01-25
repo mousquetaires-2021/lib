@@ -1,4 +1,4 @@
-$colors: (primary: #00afef, black: #3a3a3a);
+$colors: (primary: #7dd6d1, cblack: #1f3832, cnectarine: #e69248, cmediumgray: #bcbcbc);
 @function fColor($key: "cprimary") {
 	@return map-get($colors, $key);
 }

@@ -31,7 +31,10 @@ export class ServerService {
 
 	handleError(error) {
 		console.log('handleError', error);
-		if (error.status === 404) {
+		if (error.status === 403) {
+			window.location.href = '/';
+			return Promise.reject('Veuillez vous reconnecter');
+		} else if (error.status === 404) {
 			return Promise.reject('Please check your internet connection.');
 		} else if (error.status === undefined) {
 			return Promise.reject(error.toString());

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivateChild } from '@angular/router';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { AuthService } from '../services/auth/auth.service';
 
 @Injectable()
@@ -24,8 +25,14 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 	}
 
 	async checkLogin(url: string) {
-		if (await this.authService.userAdminConnected()) {
-			return true;
+		if (environment.isAdminEnv) {
+			if (await this.authService.userAdminConnected()) {
+				return true;
+			}
+		} else {
+			if (await this.authService.userConnected()) {
+				return true;
+			}
 		}
 
 		this.authService.redirectUrl = url;

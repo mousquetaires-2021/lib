@@ -1,8 +1,12 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
 @import 'material-icons/iconfont/material-icons.css';
 @import "./utils.scss";
 @import "./form.scss";
 @import "./material.scss";
+@import "./typography.scss";
+@import "./button.scss";
+@import "./ng-select.scss";
 
 html,
 body {
@@ -12,7 +16,23 @@ body {
 }
 
 * {
-	color: fColor(black);
+	color: fColor(cblack);
+	box-sizing: border-box;
+}
+
+a {
+	color: fColor(cblack);
+	font-weight: 500;
+	text-decoration: underline;
+}
+
+.color-primary {
+	color: fColor(primary) !important;
+}
+
+.horizontal-scroll {
+	display: flex;
+	overflow-x: scroll;
 }
 
 button.mat-primary.add-button,
@@ -170,54 +190,5 @@ div {
 
 	&.ng-select-focused .ng-select-container {
 		border: solid 0.5px fColor("primary") !important;
-	}
-}
-
-::-webkit-scrollbar {
-	width: 10px;
-	height: 10px;
-}
-::-webkit-scrollbar-button {
-	width: 0px;
-	height: 0px;
-}
-::-webkit-scrollbar-thumb {
-	background: #c8c8c8;
-	border: 0px none #ffffff;
-	border-radius: 0px;
-}
-::-webkit-scrollbar-thumb:hover {
-	background: #ffffff;
-}
-::-webkit-scrollbar-thumb:active {
-	background: #000000;
-}
-::-webkit-scrollbar-track {
-	background: transparent;
-	border: 0px none transparent;
-	border-radius: 0px;
-}
-::-webkit-scrollbar-track:hover {
-	background: #ffffff;
-}
-::-webkit-scrollbar-track:active {
-	background: #ffffff;
-}
-::-webkit-scrollbar-corner {
-	background: transparent;
-}
-
-.is-mobile {
-	::-webkit-scrollbar {
-		display: none;
-	}
-
-	* {
-		-ms-overflow-style: none; /* IE and Edge */
-		scrollbar-width: none; /* Firefox */
-	}
-
-	hr {
-		margin: 0;
 	}
 }

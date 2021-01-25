@@ -1,5 +1,5 @@
 export interface UserInferface {
-	email: string;
+	email?: string;
 	id?: number;
 	role?: number;
 	roleTitle?: string;
@@ -9,4 +9,6 @@ export interface UserInferface {
 	gender?: string;
 	bornDate?: Date;
 	photo?: string;
+	phone?: string;
+	password?: string;
 }

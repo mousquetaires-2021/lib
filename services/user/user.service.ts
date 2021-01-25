@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { UserInferface } from 'lib/interfaces/user-interface';
 import { BehaviorSubject } from 'rxjs';
 import { ServerService } from '../http-server/server.service';
 
@@ -24,9 +25,10 @@ export class UserService {
 		});
 	}
 
-	createAccount(params) {
+	createAccount(params: UserInferface) {
 		return this.serverService.post('users/create-account', params).then((data) => {
-			return data;
+			this.serverService.setToken(data.token);
+			return true;
 		});
 	}
 
@@ -36,5 +38,21 @@ export class UserService {
 
 	getUser(id) {
 		return this.serverService.get('users/get/' + id).then((data) => data.data || null);
+	}
+
+	mobileCreation(phone) {
+		return this.serverService.post('users/mobile-creation', { phone }).then((data) => data.data || null);
+	}
+
+	mobileValidation(phone, code) {
+		return this.serverService.post('users/mobile-validation', { phone, code }).then((data) => data.data || null);
+	}
+
+	accountForgotPassword(contact) {
+		return this.serverService.put('users/forgot-password', { contact }).then((data) => data.data || null);
+	}
+
+	lightForgotPassword(params) {
+		return this.serverService.put('users/light-forgot-password', params).then((data) => data.data || null);
 	}
 }
