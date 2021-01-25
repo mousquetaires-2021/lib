@@ -14,6 +14,10 @@ export class RestaurantService {
 
 	constructor(private serverService: ServerService) {}
 
+	getRestaurantDetails(id = null) {
+		return this.serverService.get('restaurants/get-details/' + id).then((data) => data.data || null);
+	}
+
 	getRestaurant(id = null) {
 		if (id) {
 			return this.serverService.get('restaurants/get/' + id).then((data) => data.data || null);

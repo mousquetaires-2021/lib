@@ -7,8 +7,15 @@ import { BackIconComponent } from './back-icon/back-icon.component';
 import { FullscreenLoadingComponent } from './fullscreen-loading/fullscreen-loading.component';
 import { MaterialModule } from '../libs/material.module';
 import { FormImageComponent } from './form-image/form-image.component';
+import { FormCounterComponent } from './form-counter/form-counter.component';
 
-const list = [ LoadingComponent, BackIconComponent, FullscreenLoadingComponent, FormImageComponent ];
+const list = [
+	LoadingComponent,
+	BackIconComponent,
+	FullscreenLoadingComponent,
+	FormImageComponent,
+	FormCounterComponent
+];
 
 @NgModule({
 	declarations: [ ...list ],

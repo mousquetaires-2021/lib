@@ -32,4 +32,16 @@ export class MainClass {
 
 		return '€';
 	}
+
+	public convertNoteToText(note) {
+		if (note >= 4.5) {
+			return 'Excellent';
+		}
+
+		if (note >= 3.5) {
+			return 'Bon';
+		}
+
+		return '';
+	}
 }

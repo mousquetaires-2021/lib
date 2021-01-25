@@ -21,4 +21,23 @@ export interface RestaurantInferface {
 	head_office_longitude?: string;
 	head_office_latitude?: string;
 	head_office_google_place_id?: string;
+	food_types?: FoodTypeInterface[];
+}
+
+export interface FoodTypeInterface {
+	id?: number;
+	name?: string;
+	rank?: number;
+	restaurant_id?: number;
+	foods?: FoodInterface[];
+}
+
+export interface FoodInterface {
+	id?: number;
+	name?: string;
+	description?: string;
+	photo?: string;
+	rank?: string;
+	group_id?: number;
+	price?: number;
 }
