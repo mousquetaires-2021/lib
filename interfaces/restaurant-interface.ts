@@ -22,6 +22,9 @@ export interface RestaurantInferface {
 	head_office_latitude?: string;
 	head_office_google_place_id?: string;
 	food_types?: FoodTypeInterface[];
+	average_evaluation?: number;
+	average_pricing?: number;
+	type?: string;
 }
 
 export interface FoodTypeInterface {
