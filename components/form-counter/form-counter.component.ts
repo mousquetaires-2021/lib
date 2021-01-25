@@ -1,6 +1,5 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { NgxImageCompressService } from 'ngx-image-compress';
 
 @Component({
 	selector: 'form-counter',
@@ -16,11 +15,12 @@ import { NgxImageCompressService } from 'ngx-image-compress';
 })
 export class FormCounterComponent implements OnInit, ControlValueAccessor {
 	@Input() value: number = 0;
+	@Output() onChangeValue = new EventEmitter();
 	disabled = false;
 
 	onChange: any = () => {};
 	onTouched: any = () => {};
-	constructor(private imageCompress: NgxImageCompressService) {}
+	constructor() {}
 
 	ngOnInit() {}
 
@@ -28,6 +28,7 @@ export class FormCounterComponent implements OnInit, ControlValueAccessor {
 		if (this.value + delta >= 0) {
 			this.value += delta;
 			this.onChange(this.value);
+			this.onChangeValue.emit(this.value);
 		}
 	}
 
