@@ -15,8 +15,8 @@ import { NgxImageCompressService } from 'ngx-image-compress';
 	]
 })
 export class FormImageComponent implements OnInit, ControlValueAccessor {
-	@Input() maxWidth: number;
-	@Input() maxHeight: number;
+	@Input() maxWidth: number = 300;
+	@Input() maxHeight: number = 300;
 	disabled = false;
 
 	value = '';
@@ -29,18 +29,9 @@ export class FormImageComponent implements OnInit, ControlValueAccessor {
 
 	onChangeRestaurantPhoto() {
 		this.imageCompress.uploadFile().then(({ image, orientation }) => {
-			this.imageCompress.compressFile(image, orientation, 300, 300).then((result) => {
-				this.restaurantService
-					.updateCover(this.restaurant.id, result)
-					.then(() => {
-						this.restaurant.photo = result;
-					})
-					.catch((err) => {
-						this.matSnackBar.open(err, null, {
-							horizontalPosition: 'center',
-							verticalPosition: 'top'
-						});
-					});
+			this.imageCompress.compressFile(image, orientation, this.maxWidth, this.maxHeight).then((result) => {
+				this.value = result;
+				this.onChange(result);
 			});
 		});
 	}
