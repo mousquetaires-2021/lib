@@ -16,4 +16,8 @@ export class OrderService {
 	updateOrder(params) {
 		return this.serverService.put('orders/update-order', params).then((data) => data.data || null);
 	}
+
+	confirmOrder(orderId) {
+		return this.serverService.post('orders/confirm-order', { order_id: orderId }).then((data) => data.data || null);
+	}
 }
