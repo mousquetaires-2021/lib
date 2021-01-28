@@ -20,4 +20,8 @@ export class OrderService {
 	confirmOrder(orderId) {
 		return this.serverService.post('orders/confirm-order', { order_id: orderId }).then((data) => data.data || null);
 	}
+
+	requestOrder(orderId) {
+		return this.serverService.post('orders/request-order', { order_id: orderId }).then((data) => data.data || null);
+	}
 }
