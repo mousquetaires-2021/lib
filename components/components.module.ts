@@ -8,13 +8,17 @@ import { FullscreenLoadingComponent } from './fullscreen-loading/fullscreen-load
 import { MaterialModule } from '../libs/material.module';
 import { FormImageComponent } from './form-image/form-image.component';
 import { FormCounterComponent } from './form-counter/form-counter.component';
+import { AccountIconComponent } from './account-icon/account-icon.component';
+import { CloseIconComponent } from './close-icon/close-icon.component';
 
 const list = [
 	LoadingComponent,
 	BackIconComponent,
 	FullscreenLoadingComponent,
 	FormImageComponent,
-	FormCounterComponent
+	FormCounterComponent,
+	AccountIconComponent,
+	CloseIconComponent
 ];
 
 @NgModule({
