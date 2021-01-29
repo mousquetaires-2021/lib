@@ -24,4 +24,12 @@ export class OrderService {
 	requestOrder(orderId) {
 		return this.serverService.post('orders/request-order', { order_id: orderId }).then((data) => data.data || null);
 	}
+
+	getMyOrders() {
+		return this.serverService.get('orders/get-my-orders').then((data) => data.data || []);
+	}
+
+	getOrderDetails(id) {
+		return this.serverService.get('orders/get-order-details/' + id).then((data) => data.data || null);
+	}
 }

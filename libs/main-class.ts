@@ -1,7 +1,9 @@
+import { ORDER_STATUS } from 'lib/constants/orders';
 import { Subscription } from 'rxjs';
 
 export class MainClass {
 	watcherList: Subscription[] = [];
+	public ORDER_STATUS = ORDER_STATUS;
 
 	watch(sub) {
 		this.watcherList.push(sub);
