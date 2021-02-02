@@ -16,14 +16,18 @@ export class AuthService {
 		if (tmpUser) {
 			return tmpUser;
 		} else {
-			const http = await this.userInfos();
-			if (jwToken == null || !http.user) {
-				this.userService.setUser(null);
+			try {
+				const http = await this.userInfos();
+				if (jwToken == null || !http.user) {
+					this.userService.setUser(null);
+					return null;
+				}
+
+				this.userService.setUser(http.user);
+				return http.user;
+			} catch (err) {
 				return null;
 			}
-
-			this.userService.setUser(http.user);
-			return http.user;
 		}
 	}
 
@@ -33,14 +37,18 @@ export class AuthService {
 		if (tmpUser) {
 			return tmpUser;
 		} else {
-			const http = await this.userAdminInfos();
-			if (jwToken == null || !http.user) {
-				this.userService.setUser(null);
+			try {
+				const http = await this.userAdminInfos();
+				if (jwToken == null || !http.user) {
+					this.userService.setUser(null);
+					return null;
+				}
+
+				this.userService.setUser(http.user);
+				return http.user;
+			} catch (err) {
 				return null;
 			}
-
-			this.userService.setUser(http.user);
-			return http.user;
 		}
 	}
 

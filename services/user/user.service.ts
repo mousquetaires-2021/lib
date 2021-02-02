@@ -55,4 +55,10 @@ export class UserService {
 	lightForgotPassword(params) {
 		return this.serverService.put('users/light-forgot-password', params).then((data) => data.data || null);
 	}
+
+	logout() {
+		return this.serverService.get('auths/logout').then(() => {
+			this.serverService.setToken(null);
+		});
+	}
 }
