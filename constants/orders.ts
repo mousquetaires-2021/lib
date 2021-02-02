@@ -7,6 +7,7 @@ export const ORDER_STATUS = {
 	5: 'Commande retirée',
 	6: 'En cours de livraison',
 	7: 'Arrivée',
-	8: 'Terminée',
-	9: 'Annulée'
+	8: 'Prête',
+	9: 'Terminée',
+	10: 'Annulée'
 };

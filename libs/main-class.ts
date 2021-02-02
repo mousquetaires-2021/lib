@@ -1,5 +1,6 @@
 import { ORDER_STATUS } from 'lib/constants/orders';
 import { Subscription } from 'rxjs';
+import { sumBy } from 'lodash';
 
 export class MainClass {
 	watcherList: Subscription[] = [];
@@ -46,4 +47,49 @@ export class MainClass {
 
 		return '';
 	}
+	public orderGetQuantity = (order) => {
+		if (order) {
+			return sumBy(order.products || [], 'quantity');
+		}
+
+		return 0;
+	};
+
+	public orderGetSumTTC = (order) => {
+		let total = 0;
+
+		if (order) {
+			(order.products || []).map((p) => {
+				total += p['food.price'] * p.quantity;
+			});
+		}
+
+		return total;
+	};
+
+	public orderGetTVA = (order) => {
+		let total = 0;
+
+		if (order) {
+			(order.products || []).map((p) => {
+				const price = p['food.price'] * p.quantity;
+				total += price * (p['food.tva'] / 100);
+			});
+		}
+
+		return total;
+	};
+
+	public orderGetHT = (order) => {
+		let total = 0;
+
+		if (order) {
+			(order.products || []).map((p) => {
+				const price = p['food.price'] * p.quantity;
+				total += price * ((100 - p['food.tva']) / 100);
+			});
+		}
+
+		return total;
+	};
 }
