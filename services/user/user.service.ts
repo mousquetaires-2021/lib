@@ -19,6 +19,18 @@ export class UserService {
 		}
 	}
 
+	me() {
+		return this.serverService.get('users/me').then((data) => data.data || null);
+	}
+
+	updateMe(params) {
+		return this.serverService.put('users/update-me', params).then((data) => data.data || null);
+	}
+
+	updatePasswordMe(params) {
+		return this.serverService.put('users/update-password-me', params).then((data) => data.data || null);
+	}
+
 	updateAccount(params) {
 		return this.serverService.put('users/update-account', params).then((data) => {
 			return data;
