@@ -14,4 +14,16 @@ button {
 			background-color: fColor(primary);
 		}
 	}
+
+	&.outline {
+		background-color: rgba(fColor(cmenthe), 0.2);
+		height: 27px;
+		line-height: 27px;
+		border: 1px solid fColor(cmenthe);
+		color: fColor(cmenthe);
+		font-weight: 500;
+		font-size: 14px;
+		border-radius: 8px;
+		cursor: pointer;
+	}
 }

@@ -10,6 +10,7 @@ import { FormImageComponent } from './form-image/form-image.component';
 import { FormCounterComponent } from './form-counter/form-counter.component';
 import { AccountIconComponent } from './account-icon/account-icon.component';
 import { CloseIconComponent } from './close-icon/close-icon.component';
+import { PopupComponent } from './popup/popup.component';
 
 const list = [
 	LoadingComponent,
@@ -18,7 +19,8 @@ const list = [
 	FormImageComponent,
 	FormCounterComponent,
 	AccountIconComponent,
-	CloseIconComponent
+	CloseIconComponent,
+	PopupComponent
 ];
 
 @NgModule({

@@ -1,10 +1,12 @@
 import { ORDER_STATUS } from 'lib/constants/orders';
 import { Subscription } from 'rxjs';
 import { sumBy } from 'lodash';
+import { RESTAURANT_STATUS } from 'lib/constants/restaurants';
 
 export class MainClass {
 	watcherList: Subscription[] = [];
 	public ORDER_STATUS = ORDER_STATUS;
+	public RESTAURANT_STATUS = RESTAURANT_STATUS;
 
 	watch(sub) {
 		this.watcherList.push(sub);

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { RestaurantCriterionsInterface } from 'lib/interfaces/restaurant-criterions-interface';
+import { RestaurantInferface } from 'lib/interfaces/restaurant-interface';
 import { BehaviorSubject } from 'rxjs';
 import { ServerService } from '../http-server/server.service';
 
@@ -8,6 +9,7 @@ import { ServerService } from '../http-server/server.service';
 })
 export class RestaurantService {
 	restaurants: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+	restaurant: BehaviorSubject<RestaurantInferface> = new BehaviorSubject<RestaurantInferface>(null);
 	criterions: BehaviorSubject<RestaurantCriterionsInterface> = new BehaviorSubject<RestaurantCriterionsInterface>(
 		null
 	);
@@ -30,11 +32,11 @@ export class RestaurantService {
 	}
 
 	createRestaurant(params) {
-		return this.serverService.post('restaurants/add-restaurant', params).then(this.getRestaurant.bind(this));
+		return this.serverService.post('restaurants/add-restaurant', params).then(() => this.getRestaurant());
 	}
 
-	updateCover(restaurantId, cover) {
-		return this.serverService.put('restaurants/update-cover', { restaurantId, cover });
+	updateRestaurant(restaurantId, params) {
+		return this.serverService.put('restaurants/update-restaurant', { restaurantId, ...params });
 	}
 
 	getRestaurants() {
