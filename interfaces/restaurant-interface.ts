@@ -33,6 +33,7 @@ export interface FoodTypeInterface {
 	rank?: number;
 	restaurant_id?: number;
 	foods?: FoodInterface[];
+	countProducts?: number;
 }
 
 export interface FoodInterface {

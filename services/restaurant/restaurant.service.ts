@@ -77,4 +77,8 @@ export class RestaurantService {
 			.post('restaurants/get-arround-me', { latitude, longitude })
 			.then((data) => data.data || []);
 	}
+
+	getFoodTypes(restaurantId) {
+		return this.serverService.get('restaurants/food-types/' + restaurantId).then((data) => data.data || []);
+	}
 }

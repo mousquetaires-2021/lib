@@ -12,6 +12,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 @NgModule({
 	exports: [
 		MatInputModule,
@@ -26,7 +28,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 		MatSortModule,
 		MatDatepickerModule,
 		MatNativeDateModule,
-		MatProgressSpinnerModule
+		MatProgressSpinnerModule,
+		DragDropModule
 	],
 	providers: [
 		{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
