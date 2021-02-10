@@ -12,6 +12,7 @@ import { AccountIconComponent } from './account-icon/account-icon.component';
 import { CloseIconComponent } from './close-icon/close-icon.component';
 import { PopupComponent } from './popup/popup.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const list = [
 	LoadingComponent,
@@ -26,7 +27,7 @@ const list = [
 
 @NgModule({
 	declarations: [ ...list ],
-	imports: [ CommonModule, RouterModule, MaterialModule, NgSelectModule ],
+	imports: [ CommonModule, RouterModule, MaterialModule, NgSelectModule, FormsModule, ReactiveFormsModule ],
 	providers: [ NgxImageCompressService ],
 	exports: list
 })
