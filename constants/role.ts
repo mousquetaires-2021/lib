@@ -1,5 +1,1 @@
-export const USER_ROLES = [
-	{ id: 0, label: 'Visiteur' },
-	{ id: 1, label: 'Administrateur' },
-	{ id: 2, label: 'Livreur' }
-];
+export const USER_ROLES = [ { id: 0, label: 'Visiteur' }, { id: 1, label: 'Administrateur' } ];
