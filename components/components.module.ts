@@ -11,6 +11,7 @@ import { FormCounterComponent } from './form-counter/form-counter.component';
 import { AccountIconComponent } from './account-icon/account-icon.component';
 import { CloseIconComponent } from './close-icon/close-icon.component';
 import { PopupComponent } from './popup/popup.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 const list = [
 	LoadingComponent,
@@ -25,7 +26,7 @@ const list = [
 
 @NgModule({
 	declarations: [ ...list ],
-	imports: [ CommonModule, RouterModule, MaterialModule ],
+	imports: [ CommonModule, RouterModule, MaterialModule, NgSelectModule ],
 	providers: [ NgxImageCompressService ],
 	exports: list
 })
