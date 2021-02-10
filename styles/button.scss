@@ -28,5 +28,11 @@ button {
 		font-size: 14px;
 		border-radius: 8px;
 		padding: 0 8px;
+
+		&.red {
+			border: 1px solid fColor(cred);
+			background-color: rgba(fColor(cred), 0.2);
+			color: fColor(cred);
+		}
 	}
 }

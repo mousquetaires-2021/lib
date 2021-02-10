@@ -44,4 +44,9 @@ export interface FoodInterface {
 	rank?: string;
 	group_id?: number;
 	price?: number;
+	available?: boolean;
+	tva?: number;
+	average_preparation_duration?: number;
+	max_quantity_day?: number;
+	type?: string;
 }

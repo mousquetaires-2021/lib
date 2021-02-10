@@ -8,6 +8,7 @@ import { ServerService } from '../http-server/server.service';
 })
 export class FoodService {
 	selectedFoodtype: BehaviorSubject<FoodTypeInterface> = new BehaviorSubject<FoodTypeInterface>(null);
+	foodtypes: BehaviorSubject<FoodTypeInterface[]> = new BehaviorSubject<FoodTypeInterface[]>([]);
 
 	constructor(private serverService: ServerService) {}
 	addFoodType(restaurantId, name = '') {
@@ -20,5 +21,29 @@ export class FoodService {
 
 	reorderFoodType(list) {
 		return this.serverService.put('foods/reorder-food-types', { list });
+	}
+
+	reorderFoods(list) {
+		return this.serverService.put('foods/reorder-foods', { list });
+	}
+
+	updateTitle(typeId, typeTitle) {
+		return this.serverService.put('foods/update-title-food-type/' + typeId, { name: typeTitle });
+	}
+
+	removeType(typeId) {
+		return this.serverService.delete('foods/delete-food-type/' + typeId);
+	}
+
+	createFood(params) {
+		return this.serverService.post('foods/add-food', params);
+	}
+
+	updateFood(foodId, params) {
+		return this.serverService.put('foods/update-food', { foodId, ...params });
+	}
+
+	getFoodDetails(foodId) {
+		return this.serverService.get('foods/food-details/' + foodId).then((data) => data.data || null);
 	}
 }
