@@ -12,6 +12,21 @@ button {
 		outline: none;
 	}
 
+	&.red {
+		background-color: rgba(fColor(cred), 0.2);
+		color: fColor(cred);
+	}
+
+	&.green {
+		background-color: rgba(fColor(ckale), 0.2);
+		color: fColor(ckale);
+	}
+
+	&.blue {
+		background-color: rgba(fColor(criviere), 0.2);
+		color: fColor(criviere);
+	}
+
 	&.fill {
 		&.primary {
 			background-color: fColor(primary);
