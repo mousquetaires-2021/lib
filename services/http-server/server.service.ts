@@ -33,10 +33,13 @@ export class ServerService {
 		console.log('handleError', error);
 		if (error.status === 403) {
 			window.location.href = '/';
+			alert('Veuillez vous reconnecter');
 			return Promise.reject('Veuillez vous reconnecter');
 		} else if (error.status === 404) {
+			alert('Please check your internet connection.');
 			return Promise.reject('Please check your internet connection.');
 		} else if (error.status === undefined) {
+			alert(error.toString());
 			return Promise.reject(error.toString());
 		} else {
 			const defaultErrorText = 'Please check your internet connection.';
@@ -45,6 +48,7 @@ export class ServerService {
 				err = defaultErrorText;
 			}
 
+			alert(err);
 			return Promise.reject(err);
 		}
 	}

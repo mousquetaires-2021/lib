@@ -44,4 +44,24 @@ export class OrderService {
 	getOrderFullDetails(id: number) {
 		return this.serverService.get('orders/get-full-order-details/' + id).then((data) => data.data || []);
 	}
+
+	acceptOrder(id: number) {
+		return this.serverService.put('orders/accept-order/' + id).then((data) => data.data || null);
+	}
+
+	inProgressOrder(id: number) {
+		return this.serverService.put('orders/in-progress-order/' + id).then((data) => data.data || null);
+	}
+
+	completeOrder(id: number) {
+		return this.serverService.put('orders/complete-order/' + id).then((data) => data.data || null);
+	}
+
+	finishOrder(id: number) {
+		return this.serverService.put('orders/finish-order/' + id).then((data) => data.data || null);
+	}
+
+	cancelOrder(id: number, raison: string) {
+		return this.serverService.put('orders/cancel-order/' + id, { raison }).then((data) => data.data || null);
+	}
 }
