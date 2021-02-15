@@ -13,6 +13,8 @@ import { CloseIconComponent } from './close-icon/close-icon.component';
 import { PopupComponent } from './popup/popup.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SiteFooterComponent } from './site-footer/site-footer.component';
+import { SiteHeaderComponent } from './site-header/site-header.component';
 
 const list = [
 	LoadingComponent,
@@ -22,7 +24,9 @@ const list = [
 	FormCounterComponent,
 	AccountIconComponent,
 	CloseIconComponent,
-	PopupComponent
+	PopupComponent,
+	SiteFooterComponent,
+	SiteHeaderComponent
 ];
 
 @NgModule({

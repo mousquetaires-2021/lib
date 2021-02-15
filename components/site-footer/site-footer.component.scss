@@ -1,0 +1,43 @@
+@import "../../styles/utils.scss";
+
+:host {
+	display: block;
+	padding: 32px 0;
+	background-color: white;
+}
+
+a {
+	display: block;
+	text-decoration: none;
+	color: fColor(ckale);
+}
+
+.panel {
+	display: flex;
+
+	> div {
+		flex: 1;
+		margin-right: 8px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+b {
+	color: fColor(ckale);
+}
+
+img {
+	max-height: 40px;
+}
+
+.name {
+	display: flex;
+	align-items: center;
+
+	img {
+		margin-right: 8px;
+	}
+}
