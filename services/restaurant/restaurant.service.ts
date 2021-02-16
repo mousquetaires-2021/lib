@@ -81,4 +81,11 @@ export class RestaurantService {
 	getFoodTypes(restaurantId) {
 		return this.serverService.get('restaurants/food-types/' + restaurantId).then((data) => data.data || []);
 	}
+
+	createRestaurantAndAccount(params) {
+		return this.serverService.post('restaurants/create-restaurant-and-account', params).then((data) => {
+			this.serverService.setToken(data.token);
+			return true;
+		});
+	}
 }
