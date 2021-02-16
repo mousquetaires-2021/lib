@@ -23,6 +23,23 @@ a {
 			margin-right: 0;
 		}
 	}
+
+	@media (max-width: 900px) {
+		flex-wrap: wrap;
+
+		> div {
+			width: 50%;
+			flex: none;
+			margin-right: 0;
+			margin-bottom: 16px;
+		}
+	}
+
+	@media (max-width: 450px) {
+		> div {
+			width: 100%;
+		}
+	}
 }
 
 b {

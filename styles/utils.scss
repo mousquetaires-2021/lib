@@ -13,7 +13,9 @@ $colors: (
 	ckale: #014833,
 	cred: #e86666,
 	cloveapple: #ff764c,
-	cfarine: #fff4e2
+	cfarine: #fff4e2,
+	cchataigne: #90471c,
+	cmango: #fbb217
 );
 @function fColor($key: "cprimary") {
 	@return map-get($colors, $key);

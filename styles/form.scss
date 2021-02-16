@@ -7,7 +7,6 @@ input:focus {
 }
 
 input.ethics-ui {
-	padding: 8px;
 	height: 40px;
 	background: #ffffff;
 	border: 1px solid #bcbcbc;
@@ -15,9 +14,23 @@ input.ethics-ui {
 	border-radius: 8px;
 	width: 100%;
 	font-size: 16px;
+	padding: 0 12px;
 
 	&.dark {
 		border: 1px solid black;
+	}
+
+	&.alf {
+		flex: 1;
+		margin-right: 16px;
+
+		&.is-even {
+			margin-right: 0;
+		}
+	}
+
+	&::placeholder {
+		opacity: 0.3;
 	}
 }
 
@@ -38,6 +51,16 @@ input[type=submit] {
 	font-weight: 500;
 	font-size: 14px;
 	border-radius: 8px;
+	cursor: pointer;
+
+	&.big {
+		height: 51px;
+		border: none;
+		padding: 0 24px;
+		color: fColor(ckale);
+		border-radius: 16px;
+		background-color: fColor(cmango);
+	}
 }
 
 textarea.ethics-ui {

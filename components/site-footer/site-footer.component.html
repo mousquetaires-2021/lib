@@ -1,7 +1,9 @@
 <div class="content-wrapper">
   <div class="panel">
     <div class="about">
-      <p class="name"><img src="/lib-assets/logo.svg" alt="logo" /><b>Delivreetic</b></p>
+      <a [href]="environment.site.www">
+        <p class="name"><img src="/lib-assets/logo.svg" alt="logo" /><b>Delivreetic</b></p>
+      </a>
       <p>La première platforme pour les restaurateurs!</p>
     </div>
     <div class="pages">
@@ -19,8 +21,8 @@
       <a [href]="environment.site.www+'cookie'">Cookie</a>
     </div>
     <div class="social">
-      <a href=""><img src="/lib-assets/apple-store.png" alt="Apple store" /></a>
-      <a href=""><img src="/lib-assets/play-store.png" alt="Play store" /></a>
+      <a href=""><img src="/lib-assets/apple-store.png" alt="Apple store" target="_blank" /></a>
+      <a href=""><img src="/lib-assets/play-store.png" alt="Play store" target="_blank" /></a>
     </div>
   </div>
 </div>
