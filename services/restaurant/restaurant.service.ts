@@ -88,4 +88,8 @@ export class RestaurantService {
 			return true;
 		});
 	}
+
+	pauseRestaurationPreparations(restaurantId) {
+		return this.serverService.put('restaurants/pause-restauration-id/' + restaurantId);
+	}
 }

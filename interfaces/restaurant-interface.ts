@@ -25,6 +25,8 @@ export interface RestaurantInferface {
 	average_evaluation?: number;
 	average_pricing?: number;
 	type?: string;
+	food_status?: number;
+	history?: string;
 }
 
 export interface FoodTypeInterface {

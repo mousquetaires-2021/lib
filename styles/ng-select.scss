@@ -7,3 +7,11 @@ ng-select.no-ui {
 		opacity: 0;
 	}
 }
+
+.ng-select.ng-select-single .ng-select-container {
+	height: 40px;
+}
+
+.ng-select .ng-select-container {
+	border-radius: 8px;
+}

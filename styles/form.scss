@@ -61,6 +61,12 @@ input[type=submit] {
 		border-radius: 16px;
 		background-color: fColor(cmango);
 	}
+
+	&.red {
+		background-color: rgba(fColor(cred), 0.2);
+		border: 1px solid fColor(cred);
+		color: fColor(cred);
+	}
 }
 
 textarea.ethics-ui {
