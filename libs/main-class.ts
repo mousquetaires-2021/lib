@@ -3,11 +3,14 @@ import { Subscription } from 'rxjs';
 import { sumBy } from 'lodash';
 import { RESTAURANT_STATUS } from 'lib/constants/restaurants';
 import { environment } from 'src/environments/environment';
+import { FOOD_STATUS, FOOD_STATUS_LABEL } from 'lib/constants/foodStatus';
 
 export class MainClass {
 	watcherList: Subscription[] = [];
 	public ORDER_STATUS = ORDER_STATUS;
 	public RESTAURANT_STATUS = RESTAURANT_STATUS;
+	public FOOD_STATUS = FOOD_STATUS;
+	public FOOD_STATUS_LABEL = FOOD_STATUS_LABEL;
 	public environment = environment;
 
 	watch(sub) {

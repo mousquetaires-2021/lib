@@ -46,4 +46,8 @@ export class FoodService {
 	getFoodDetails(foodId) {
 		return this.serverService.get('foods/food-details/' + foodId).then((data) => data.data || null);
 	}
+
+	updateFoodPutPause(foodId) {
+		return this.serverService.put('foods/food-pause/' + foodId).then((data) => data.data || null);
+	}
 }
