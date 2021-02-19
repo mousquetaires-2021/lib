@@ -14,19 +14,26 @@ export interface RestaurantInferface {
 	delivery_longitude?: string;
 	delivery_latitude?: string;
 	delivery_google_place_id?: string;
-	head_office_address_number?: string;
-	head_office_address_street_name?: string;
-	head_office_address_postal_code?: string;
-	head_office_address_city_name?: string;
-	head_office_longitude?: string;
-	head_office_latitude?: string;
-	head_office_google_place_id?: string;
 	food_types?: FoodTypeInterface[];
 	average_evaluation?: number;
 	average_pricing?: number;
 	type?: string;
 	food_status?: number;
 	history?: string;
+	opening_monday?: string;
+	opening_tuesday?: string;
+	opening_wednesday?: string;
+	opening_thursday?: string;
+	opening_friday?: string;
+	opening_saturday?: string;
+	opening_sunday?: string;
+	social_facebook?: string;
+	social_twitter?: string;
+	social_tumblr?: string;
+	social_linkedin?: string;
+	social_instagram?: string;
+	social_pinterest?: string;
+	website?: string;
 }
 
 export interface FoodTypeInterface {
@@ -51,4 +58,18 @@ export interface FoodInterface {
 	average_preparation_duration?: number;
 	max_quantity_day?: number;
 	type?: string;
+}
+
+export interface RestaurantOpeningDay {
+	enable?: boolean;
+	label?: string;
+	key?: string;
+	opening?: RangeOpeningDay[];
+}
+
+export interface RangeOpeningDay {
+	startHour?: number;
+	startMinute?: number;
+	endHour?: number;
+	endMinute?: number;
 }
