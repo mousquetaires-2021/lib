@@ -2,9 +2,18 @@
 
 :host {
 	display: block;
-	background-color: fColor(ckale);
+	height: 80px;
 
-	> .wrapper {
+	.menu {
+		height: 80px;
+		background-color: fColor(ckale);
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+	}
+
+	.wrapper {
 		display: flex;
 		align-items: center;
 		height: 80px;

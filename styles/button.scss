@@ -31,6 +31,10 @@ button {
 		&.primary {
 			background-color: fColor(primary);
 		}
+
+		&.secondary {
+			background-color: fColor(cmango);
+		}
 	}
 
 	&.outline {
