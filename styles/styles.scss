@@ -15,10 +15,10 @@ body {
 	height: 100vh;
 	padding: 0;
 	margin: 0;
+	background-color: fColor(cfarine);
 }
 
 * {
-	color: fColor(cblack);
 	box-sizing: border-box;
 }
 
@@ -84,13 +84,6 @@ img {
 
 .white-herit * {
 	color: white;
-}
-
-input,
-p,
-i,
-div {
-	color: #354052;
 }
 
 .wrapper {

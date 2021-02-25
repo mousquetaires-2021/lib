@@ -38,11 +38,11 @@ button {
 	}
 
 	&.outline {
-		background-color: rgba(fColor(cmenthe), 0.2);
+		background-color: rgba(fColor(primary), 0.2);
 		height: 27px;
 		line-height: 27px;
-		border: 1px solid fColor(cmenthe);
-		color: fColor(cmenthe);
+		border: 1px solid fColor(primary);
+		color: fColor(primary);
 		font-weight: 500;
 		font-size: 14px;
 		border-radius: 8px;
