@@ -1,4 +1,5 @@
 import { RestaurantInferface } from './restaurant-interface';
+import { UserInferface } from './user-interface';
 
 export interface OrderInferface {
 	id?: number;
@@ -10,6 +11,7 @@ export interface OrderInferface {
 	restaurant?: RestaurantInferface;
 	updated_at?: number;
 	rejection_raison?: string;
+	user?: UserInferface;
 }
 
 export interface ProductOrderInterface {
