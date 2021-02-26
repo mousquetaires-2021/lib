@@ -9,6 +9,7 @@ export interface OrderInferface {
 	quantity?: number;
 	restaurant?: RestaurantInferface;
 	updated_at?: number;
+	rejection_raison?: string;
 }
 
 export interface ProductOrderInterface {
