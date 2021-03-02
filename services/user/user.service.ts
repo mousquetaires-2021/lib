@@ -73,4 +73,12 @@ export class UserService {
 			this.serverService.setToken(null);
 		});
 	}
+
+	userDetails() {
+		return this.serverService.get('users/account-details').then((data) => data.data || null);
+	}
+
+	updateUserDetails(params) {
+		return this.serverService.put('users/update-account-details', params);
+	}
 }
