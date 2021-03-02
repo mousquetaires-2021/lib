@@ -81,4 +81,8 @@ export class UserService {
 	updateUserDetails(params) {
 		return this.serverService.put('users/update-account-details', params);
 	}
+
+	updateNotificationsToken(token) {
+		return this.serverService.post('notifications/update', { token });
+	}
 }
