@@ -82,4 +82,11 @@ export class AuthService {
 			return data;
 		});
 	}
+
+	onLogout() {
+		return this.serverService.get('auths/logout').then((data) => {
+			this.serverService.removeToken();
+			this.userService.user.next(null);
+		});
+	}
 }
