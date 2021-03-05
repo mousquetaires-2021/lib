@@ -1,7 +1,12 @@
 import { ORDER_STATUS } from 'lib/constants/orders';
 import { Subscription } from 'rxjs';
 import { sumBy } from 'lodash';
-import { RESTAURANT_FOOD_STATUS, RESTAURANT_FOOD_STATUS_LABEL, RESTAURANT_STATUS } from 'lib/constants/restaurants';
+import {
+	RESTAURANT_FOOD_STATUS,
+	RESTAURANT_FOOD_STATUS_LABEL,
+	RESTAURANT_STATUS,
+	RESTAURANT_TYPE_LABEL
+} from 'lib/constants/restaurants';
 import { environment } from 'src/environments/environment';
 import { FOOD_STATUS, FOOD_STATUS_LABEL } from 'lib/constants/foodStatus';
 
@@ -13,6 +18,7 @@ export class MainClass {
 	public FOOD_STATUS_LABEL = FOOD_STATUS_LABEL;
 	public RESTAURANT_FOOD_STATUS = RESTAURANT_FOOD_STATUS;
 	public RESTAURANT_FOOD_STATUS_LABEL = RESTAURANT_FOOD_STATUS_LABEL;
+	public RESTAURANT_TYPE_LABEL = RESTAURANT_TYPE_LABEL;
 	public environment = environment;
 
 	watch(sub) {

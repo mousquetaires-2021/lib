@@ -1,3 +1,5 @@
+import { sortBy } from 'lodash';
+
 export const RESTAURANT_STATUS = {
 	0: 'En attente de validation par deliveetic',
 	1: 'Validé',
@@ -17,3 +19,20 @@ export const RESTAURANT_FOOD_STATUS_LABEL = Object.entries(RESTAURANT_FOOD_STATU
 	id: value,
 	label: RESTAURANT_FOOD_STATUS[value]
 }));
+
+export const RESTAURANT_TYPE = {
+	0: 'Africain',
+	1: 'Américain',
+	2: 'Asiatique',
+	3: 'Pizzeria',
+	4: 'Korean',
+	5: 'Autre'
+};
+
+export const RESTAURANT_TYPE_LABEL = sortBy(
+	Object.entries(RESTAURANT_TYPE).map((key, value) => ({
+		id: value,
+		label: RESTAURANT_TYPE[value]
+	})),
+	[ 'label' ]
+);

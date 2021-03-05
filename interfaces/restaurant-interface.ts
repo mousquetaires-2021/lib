@@ -34,6 +34,9 @@ export interface RestaurantInferface {
 	social_instagram?: string;
 	social_pinterest?: string;
 	website?: string;
+	delivery?: number;
+	take_away?: number;
+	eat_in?: number;
 }
 
 export interface FoodTypeInterface {
