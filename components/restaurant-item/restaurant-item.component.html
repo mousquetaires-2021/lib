@@ -1,0 +1,8 @@
+<div class="image" [ngStyle]="{'background-image': 'url('+restaurant.photo+')'}"></div>
+<div class="title">
+  <div class="name">{{restaurant.name}}</div>
+  <div class="note"><img src="/lib-assets/green-star.svg" /> {{restaurant.average_evaluation}}</div>
+</div>
+<div class="sub-name"><span>{{(restaurant.type || '').split(',').join(', ')}}</span> -
+  {{convertPriceToDollars(restaurant.average_pricing)}}
+</div>

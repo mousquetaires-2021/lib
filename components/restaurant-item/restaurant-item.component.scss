@@ -1,0 +1,62 @@
+@import "../../styles/utils.scss";
+
+:host {
+	padding: 8px 8px 23px 8px;
+	margin: 32px;
+	border-radius: 16px;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	filter: drop-shadow(0px 10px 40px rgba(31, 56, 50, 0.1));
+
+	.image {
+		background-size: cover;
+		background-position: center;
+		height: 126px;
+		border-radius: 10px;
+	}
+
+	.title {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.name {
+		font-weight: 600;
+		font-size: 16px;
+		color: fColor(cblack);
+		margin-top: 11px;
+		margin-bottom: 3px;
+	}
+
+	.sub-name {
+		font-size: 11px;
+		text-transform: capitalize;
+		color: fColor(cmediumgray);
+		display: flex;
+
+		span {
+			max-width: 80%;
+			display: inline-block;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			margin-right: 4px;
+		}
+	}
+
+	.note {
+		font-weight: 600;
+		font-size: 11px;
+		color: fColor(cblack);
+		align-items: center;
+		display: flex;
+		margin-top: 7px;
+
+		img {
+			margin-right: 4px;
+			position: relative;
+			top: -2px;
+		}
+	}
+}

@@ -15,6 +15,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SiteFooterComponent } from './site-footer/site-footer.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
+import { RestaurantItemComponent } from './restaurant-item/restaurant-item.component';
 
 const list = [
 	LoadingComponent,
@@ -26,7 +27,8 @@ const list = [
 	CloseIconComponent,
 	PopupComponent,
 	SiteFooterComponent,
-	SiteHeaderComponent
+	SiteHeaderComponent,
+	RestaurantItemComponent
 ];
 
 @NgModule({
