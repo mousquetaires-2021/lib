@@ -85,4 +85,8 @@ export class UserService {
 	updateNotificationsToken(token) {
 		return this.serverService.post('notifications/update', { token });
 	}
+
+	removeNotificationsToken(token) {
+		return this.serverService.post('notifications/remove', { token });
+	}
 }

@@ -5,5 +5,5 @@ export interface RestaurantTypeInterface {
 }
 
 export interface RestaurantCriterionsInterface {
-	foodTypes: RestaurantTypeInterface[];
+	restaurantTypes: RestaurantTypeInterface[];
 }
