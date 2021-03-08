@@ -37,6 +37,7 @@ export interface RestaurantInferface {
 	delivery?: number;
 	take_away?: number;
 	eat_in?: number;
+	distance?: number;
 }
 
 export interface FoodTypeInterface {

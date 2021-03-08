@@ -1,4 +1,6 @@
-<div class="image" [ngStyle]="{'background-image': 'url('+restaurant.photo+')'}"></div>
+<div class="image" [ngStyle]="{'background-image': 'url('+restaurant.photo+')'}">
+  <div *ngIf="restaurant.distance" class="distance">{{getStringDistance(restaurant.distance)}}</div>
+</div>
 <div class="title">
   <div class="name">{{restaurant.name}}</div>
   <div class="note" *ngIf="restaurant.average_evaluation"><img src="/lib-assets/green-star.svg" />
