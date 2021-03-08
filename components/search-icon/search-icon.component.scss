@@ -1,0 +1,17 @@
+a,
+span {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 32px;
+	width: 32px;
+	border-radius: 32px;
+	background: #ffffff;
+	box-shadow: 2px 2px 4px rgba(31, 56, 50, 0.15);
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: none;
+	}
+}

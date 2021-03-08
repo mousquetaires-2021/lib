@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SiteFooterComponent } from './site-footer/site-footer.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { RestaurantItemComponent } from './restaurant-item/restaurant-item.component';
+import { SearchIconComponent } from './search-icon/search-icon.component';
 
 const list = [
 	LoadingComponent,
@@ -28,7 +29,8 @@ const list = [
 	PopupComponent,
 	SiteFooterComponent,
 	SiteHeaderComponent,
-	RestaurantItemComponent
+	RestaurantItemComponent,
+	SearchIconComponent
 ];
 
 @NgModule({
