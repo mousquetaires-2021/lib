@@ -79,6 +79,10 @@ export class ServerService {
 		return this._http.get(this.getUrl(url), { ...this.getOptions(), ...options }).catch(this.handleError);
 	}
 
+	getWithoutError(url, options = {}): Promise<any> {
+		return this._http.get(this.getUrl(url), { ...this.getOptions(), ...options });
+	}
+
 	post(url, params = {}, options = {}): Promise<any> {
 		return this._http.post(this.getUrl(url), params, { ...this.getOptions(), ...options }).catch(this.handleError);
 	}

@@ -64,6 +64,12 @@ export class AuthService {
 		});
 	}
 
+	userInfosWithoutError() {
+		return this.serverService.getWithoutError('auths/auto-login').then((data) => {
+			return data;
+		});
+	}
+
 	login(params = {}): Promise<any> {
 		return this.serverService.post('auths/login', params).then((data) => {
 			this.serverService.setToken(data.token);
