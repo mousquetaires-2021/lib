@@ -13,6 +13,13 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatTooltipDefaultOptions, MatTooltipModule, MAT_TOOLTIP_DEFAULT_OPTIONS } from '@angular/material/tooltip';
+
+export const myCustomTooltipDefaults: MatTooltipDefaultOptions = {
+	showDelay: 1000,
+	hideDelay: 1000,
+	touchendHideDelay: 1000
+};
 
 @NgModule({
 	exports: [
@@ -29,12 +36,14 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 		MatDatepickerModule,
 		MatNativeDateModule,
 		MatProgressSpinnerModule,
-		DragDropModule
+		DragDropModule,
+		MatTooltipModule
 	],
 	providers: [
 		{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
 		{ provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 } },
-		{ provide: MAT_DATE_LOCALE, useValue: 'fr-FR' }
+		{ provide: MAT_DATE_LOCALE, useValue: 'fr-FR' },
+		{ provide: MAT_TOOLTIP_DEFAULT_OPTIONS, useValue: myCustomTooltipDefaults }
 	]
 })
 export class MaterialModule {}
