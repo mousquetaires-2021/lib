@@ -12,7 +12,7 @@ export const ORDER_STATUS = {
 
 	250: 'Commande à retirer',
 
-	300: 'Cloturée',
+	300: 'Terminée',
 
 	400: 'Annulée'
 };

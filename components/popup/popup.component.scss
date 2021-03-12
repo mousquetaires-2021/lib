@@ -72,6 +72,7 @@
 		display: flex;
 		flex-direction: column;
 		height: fit-content;
+		border-radius: 8px;
 
 		> * {
 			padding-right: 24px;
@@ -88,11 +89,21 @@
 		position: relative;
 
 		.close {
-			color: fColor('cblack');
-			cursor: pointer;
 			position: absolute;
 			top: -8px;
-			right: 7px;
+			right: 10px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			height: 32px;
+			width: 32px;
+			border-radius: 32px;
+			background: #ffffff;
+			box-shadow: 2px 2px 4px rgba(31, 56, 50, 0.15);
+			text-decoration: none;
+			cursor: pointer;
+			color: fColor(ckale);
+			font-size: 18px;
 		}
 	}
 

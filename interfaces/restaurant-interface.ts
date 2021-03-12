@@ -38,6 +38,8 @@ export interface RestaurantInferface {
 	take_away?: number;
 	eat_in?: number;
 	distance?: number;
+	can_evaluate?: boolean;
+	user_evaluation?: number;
 }
 
 export interface FoodTypeInterface {
