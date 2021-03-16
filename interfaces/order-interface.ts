@@ -16,6 +16,7 @@ export interface OrderInferface {
 	user_service_charge_sum?: number;
 	restaurant_service_charge_sum?: number;
 	service_charge?: number; // equal user_service_charge_sum
+	transferDone?: boolean;
 }
 
 export interface ProductOrderInterface {

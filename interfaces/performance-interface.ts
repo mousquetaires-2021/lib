@@ -10,4 +10,5 @@ export interface PerformanceInferface {
 	totalBankFee?: number;
 	totalDelivreeticFee?: number;
 	totalDelivreeticFeeHT?: number;
+	totalTransfer?: number;
 }
