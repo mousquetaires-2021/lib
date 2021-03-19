@@ -1,7 +1,7 @@
-<div *ngIf="visible" class="animated fadeIn popup">
+<div *ngIf="visible" class="animate__animated animate__fadeIn popup">
   <div
     [ngStyle]="{height: getInternetExplorerVersion() === 11? '100%' : 'auto', minWidth: getInternetExplorerVersion() === 11? '500px' : '', minHeight: minHeight}">
-    <div class="title" *ngIf="title">{{ title }}
+    <div class="title">{{ title }}
       <i class="material-icons close pointer" *ngIf="closeIcon" (click)="onClose.emit()">close</i>
     </div>
     <div class="content">

@@ -92,4 +92,8 @@ export class RestaurantService {
 	pauseRestaurationPreparations(restaurantId) {
 		return this.serverService.put('restaurants/pause-restauration-id/' + restaurantId);
 	}
+
+	evaluate(restaurantId, note) {
+		return this.serverService.put('restaurants/evaluate', { restaurantId, note }).then((data) => data.data || null);
+	}
 }

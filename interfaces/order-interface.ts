@@ -7,6 +7,7 @@ export interface OrderInferface {
 	status?: number;
 	products?: ProductOrderInterface[];
 	total?: number;
+	sum?: number; // equal total
 	quantity?: number;
 	restaurant?: RestaurantInferface;
 	updated_at?: number;
@@ -14,6 +15,7 @@ export interface OrderInferface {
 	user?: UserInferface;
 	user_service_charge_sum?: number;
 	restaurant_service_charge_sum?: number;
+	service_charge?: number; // equal user_service_charge_sum
 }
 
 export interface ProductOrderInterface {
