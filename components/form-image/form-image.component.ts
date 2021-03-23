@@ -18,9 +18,7 @@ export class FormImageComponent implements OnInit, ControlValueAccessor {
 	@Input() maxWidth: number = 300;
 	@Input() maxHeight: number = 300;
 	disabled = false;
-
 	value = '';
-
 	onChange: any = () => {};
 	onTouched: any = () => {};
 	constructor(private imageCompress: NgxImageCompressService) {}
