@@ -50,4 +50,8 @@ export class FoodService {
 	updateFoodPutPause(foodId) {
 		return this.serverService.put('foods/food-pause/' + foodId).then((data) => data.data || null);
 	}
+
+	deleteFood(foodId) {
+		return this.serverService.delete('foods/delete-food/' + foodId).then((data) => data.data || null);
+	}
 }
