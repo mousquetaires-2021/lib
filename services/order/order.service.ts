@@ -72,4 +72,8 @@ export class OrderService {
 	getAllOrders() {
 		return this.serverService.get('orders/get-orders').then((data) => data.data || []);
 	}
+
+	adminUpdateOrderStatus(params) {
+		return this.serverService.put('orders/admin-update-status', params).then((data) => data.data || null);
+	}
 }
