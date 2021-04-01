@@ -1,4 +1,4 @@
-import { ORDER_STATUS } from 'lib/constants/orders';
+import { ORDER_STATUS, ORDER_STATUS_LABEL } from 'lib/constants/orders';
 import { Subscription } from 'rxjs';
 import { sumBy } from 'lodash';
 import {
@@ -13,6 +13,7 @@ import { FOOD_STATUS, FOOD_STATUS_LABEL } from 'lib/constants/foodStatus';
 export class MainClass {
 	watcherList: Subscription[] = [];
 	public ORDER_STATUS = ORDER_STATUS;
+	public ORDER_STATUS_LABEL = ORDER_STATUS_LABEL;
 	public RESTAURANT_STATUS = RESTAURANT_STATUS;
 	public FOOD_STATUS = FOOD_STATUS;
 	public FOOD_STATUS_LABEL = FOOD_STATUS_LABEL;

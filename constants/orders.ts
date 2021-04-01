@@ -16,3 +16,8 @@ export const ORDER_STATUS = {
 
 	400: 'Annulée'
 };
+
+export const ORDER_STATUS_LABEL = Object.entries(ORDER_STATUS).map((key, value) => ({
+	id: +key[0],
+	label: key[1]
+}));

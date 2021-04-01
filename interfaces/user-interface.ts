@@ -4,7 +4,9 @@ export interface UserInferface {
 	role?: number;
 	roleTitle?: string;
 	status?: number;
+	first_name?: string;
 	firstName?: string;
+	last_name?: string;
 	lastName?: string;
 	gender?: string;
 	bornDate?: Date;
