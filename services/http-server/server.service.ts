@@ -36,13 +36,13 @@ export class ServerService {
 			alert('Veuillez vous reconnecter');
 			return Promise.reject('Veuillez vous reconnecter');
 		} else if (error.status === 404) {
-			alert('Please check your internet connection.');
-			return Promise.reject('Please check your internet connection.');
+			alert('Connexion au serveur impossible. Veuillez réessayer dans quelques minutes.');
+			return Promise.reject('Connexion au serveur impossible. Veuillez réessayer dans quelques minutes.');
 		} else if (error.status === undefined) {
 			alert(error.toString());
 			return Promise.reject(error.toString());
 		} else {
-			const defaultErrorText = 'Please check your internet connection.';
+			const defaultErrorText = 'Connexion au serveur impossible. Veuillez réessayer dans quelques minutes.';
 			let err = error.error || error.statusText || defaultErrorText;
 			if (err === 'error' || typeof err !== 'string') {
 				err = defaultErrorText;

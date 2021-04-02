@@ -2,12 +2,42 @@ mat-form-field {
 	width: 100%;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
 	outline: none;
 }
 
 input.ethics-ui {
 	height: 40px;
+	background: #ffffff;
+	border: 1px solid #bcbcbc;
+	box-sizing: border-box;
+	border-radius: 8px;
+	width: 100%;
+	font-size: 16px;
+	padding: 0 12px;
+	color: black;
+
+	&.dark {
+		border: 1px solid black;
+	}
+
+	&.alf {
+		flex: 1;
+		margin-right: 16px;
+
+		&.is-even {
+			margin-right: 0;
+		}
+	}
+
+	&::placeholder {
+		opacity: 0.3;
+	}
+}
+
+textarea.ethics-ui {
+	height: 140px;
 	background: #ffffff;
 	border: 1px solid #bcbcbc;
 	box-sizing: border-box;
