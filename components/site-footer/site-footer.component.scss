@@ -22,6 +22,12 @@ a {
 		&:last-child {
 			margin-right: 0;
 		}
+
+		.reseaux {
+			width: 30px;
+			margin: 16px 16px 16px 0;
+			display: inline-block;
+		}
 	}
 
 	@media (max-width: 900px) {
