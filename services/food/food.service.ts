@@ -51,6 +51,10 @@ export class FoodService {
 		return this.serverService.put('foods/food-pause/' + foodId).then((data) => data.data || null);
 	}
 
+	updateFoodPutPlay(foodId) {
+		return this.serverService.put('foods/food-play/' + foodId).then((data) => data.data || null);
+	}
+
 	deleteFood(foodId) {
 		return this.serverService.delete('foods/delete-food/' + foodId).then((data) => data.data || null);
 	}
