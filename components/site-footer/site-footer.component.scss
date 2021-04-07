@@ -17,7 +17,7 @@ a {
 
 	> div {
 		flex: 1;
-		margin-right: 8px;
+		margin-right: 16px;
 
 		&:last-child {
 			margin-right: 0;
@@ -68,4 +68,5 @@ img {
 
 .copyright {
 	margin-top: 24px;
+	text-align: center;
 }
