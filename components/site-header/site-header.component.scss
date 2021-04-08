@@ -11,6 +11,7 @@
 		left: 0;
 		right: 0;
 		top: 0;
+		z-index: 1;
 	}
 
 	.wrapper {
@@ -21,6 +22,10 @@
 		.logo {
 			display: flex;
 			align-items: center;
+
+			@media screen and (max-width: 1070px) {
+				margin-left: 0;
+			}
 		}
 
 		img {
@@ -31,6 +36,20 @@
 		p,
 		a {
 			color: fColor(cfarine);
+			position: relative;
+
+			&.active {
+				&:after {
+					content: " ";
+					position: absolute;
+					left: 0;
+					top: calc(100% + 4px);
+					right: 0;
+					height: 4px;
+					opacity: 0.8;
+					background-color: fColor(cfarine);
+				}
+			}
 		}
 
 		a {
@@ -38,6 +57,42 @@
 			font-size: 16px;
 			font-weight: normal;
 			text-decoration: none;
+		}
+
+		.burger-menu {
+			margin-right: 16px;
+			color: white;
+		}
+	}
+}
+
+.popup-menu {
+	position: fixed;
+	top: 80px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: fColor(ckale);
+	z-index: 1;
+
+	a {
+		margin: 14px 24px;
+		width: calc(100% - 48px);
+		font-size: 18px;
+		color: white;
+		position: relative;
+		display: inline-block;
+		text-decoration: none;
+
+		&.active:before {
+			content: " ";
+			position: absolute;
+			left: 0;
+			top: 100%;
+			right: -9px;
+			height: 4px;
+			opacity: 0.5;
+			background-color: fColor(cfarine);
 		}
 	}
 }

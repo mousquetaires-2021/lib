@@ -191,3 +191,17 @@ img {
 		border: solid 0.5px fColor("primary") !important;
 	}
 }
+
+.is-mobile {
+	display: none;
+}
+
+@media screen and (max-width: 1070px) {
+	.is-mobile {
+		display: block;
+	}
+
+	.is-desktop {
+		display: none;
+	}
+}
