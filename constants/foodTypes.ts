@@ -1,14 +1,10 @@
 export const FOOD_TYPES = [
 	{
 		id: 'alcool',
-		label: 'Alcool'
-	},
-	{
-		id: 'drink',
-		label: 'Boisson'
+		label: 'Oui'
 	},
 	{
 		id: 'other',
-		label: 'Autres'
+		label: 'Non'
 	}
 ];
