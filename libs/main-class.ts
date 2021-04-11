@@ -9,6 +9,7 @@ import {
 } from 'lib/constants/restaurants';
 import { environment } from 'src/environments/environment';
 import { FOOD_STATUS, FOOD_STATUS_LABEL } from 'lib/constants/foodStatus';
+import { DOCUMENTS_LABEL } from 'lib/constants/documents';
 
 export class MainClass {
 	watcherList: Subscription[] = [];
@@ -20,6 +21,7 @@ export class MainClass {
 	public RESTAURANT_FOOD_STATUS = RESTAURANT_FOOD_STATUS;
 	public RESTAURANT_FOOD_STATUS_LABEL = RESTAURANT_FOOD_STATUS_LABEL;
 	public RESTAURANT_TYPE_LABEL = RESTAURANT_TYPE_LABEL;
+	public DOCUMENTS_LABEL = DOCUMENTS_LABEL;
 	public environment = environment;
 
 	watch(sub) {
