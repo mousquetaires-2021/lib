@@ -14,6 +14,26 @@ export class UserService {
 	setUser(user) {
 		this.user.next(user);
 
+		if (user) {
+			var _hsq = (window['_hsq'] = window['_hsq'] || []);
+
+			var userId = user.id;
+			var isRegistered = !!userId;
+
+			if (isRegistered) {
+				_hsq.push([
+					'identify',
+					{
+						email: user.email,
+						id: userId,
+						fullName: user.first_name + ' ' + user.last_name,
+						firstName: user.first_name,
+						lastName: user.last_name
+					}
+				]);
+			}
+		}
+
 		if (user && user.token) {
 			this.serverService.setToken(user.token);
 		}
