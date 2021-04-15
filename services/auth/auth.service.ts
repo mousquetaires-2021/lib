@@ -90,9 +90,6 @@ export class AuthService {
 	}
 
 	onLogout() {
-		return this.serverService.get('auths/logout').then((data) => {
-			this.serverService.removeToken();
-			this.userService.user.next(null);
-		});
+		return this.userService.logout();
 	}
 }
