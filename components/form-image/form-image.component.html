@@ -1,2 +1,7 @@
-<img [src]="value" [ngStyle]="{'max-height': maxWidth+'px'}" />
-<button (click)="onChangeRestaurantPhoto()" class="outline">Changer la photo</button>
+<img *ngIf="preview || showForce" [src]="value | sanitizeResourceUrl" [ngStyle]="{'max-height': maxWidth+'px'}" />
+<button (click)="onChangeRestaurantPhoto()" class="outline" type="button">{{value ? 'Changer l\'image' : 'Choisir une
+  image'}}
+</button>
+<button *ngIf="previewBt && value" (click)="showForce = !showForce" class="outline" type="button">{{showForce ? 'Cacher'
+  : 'Voir'}}
+</button>

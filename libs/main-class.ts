@@ -10,7 +10,14 @@ import {
 import { environment } from 'src/environments/environment';
 import { FOOD_STATUS, FOOD_STATUS_LABEL } from 'lib/constants/foodStatus';
 import { DOCUMENTS_LABEL } from 'lib/constants/documents';
-import { DELIVER_STATUS, DELIVER_STATUS_LABEL } from 'lib/constants/delivers';
+import {
+	DELIVER_DEPARTEMENT,
+	DELIVER_DEPARTEMENT_LABEL,
+	DELIVER_STATUS,
+	DELIVER_STATUS_LABEL,
+	DELIVER_WAY,
+	DELIVER_WAY_LABEL
+} from 'lib/constants/delivers';
 
 export class MainClass {
 	watcherList: Subscription[] = [];
@@ -25,6 +32,10 @@ export class MainClass {
 	public DOCUMENTS_LABEL = DOCUMENTS_LABEL;
 	public DELIVER_STATUS = DELIVER_STATUS;
 	public DELIVER_STATUS_LABEL = DELIVER_STATUS_LABEL;
+	public DELIVER_WAY = DELIVER_WAY;
+	public DELIVER_WAY_LABEL = DELIVER_WAY_LABEL;
+	public DELIVER_DEPARTEMENT = DELIVER_DEPARTEMENT;
+	public DELIVER_DEPARTEMENT_LABEL = DELIVER_DEPARTEMENT_LABEL;
 	public environment = environment;
 
 	watch(sub) {

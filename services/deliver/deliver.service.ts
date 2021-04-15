@@ -14,4 +14,8 @@ export class DeliverService {
 	getProfil() {
 		return this.serverService.get('delivers/get-account-profil').then((data) => data.data);
 	}
+
+	updateProfil(params) {
+		return this.serverService.put('delivers/update-account-profil', params).then((data) => data.data);
+	}
 }
