@@ -1,5 +1,5 @@
 import { RestaurantInferface } from './restaurant-interface';
-import { UserInferface } from './user-interface';
+import { UserInterface } from './user-interface';
 
 export interface OrderInferface {
 	id?: number;
@@ -12,7 +12,7 @@ export interface OrderInferface {
 	restaurant?: RestaurantInferface;
 	updated_at?: number;
 	rejection_raison?: string;
-	user?: UserInferface;
+	user?: UserInterface;
 	user_service_charge_sum?: number;
 	restaurant_service_charge_sum?: number;
 	service_charge?: number; // equal user_service_charge_sum

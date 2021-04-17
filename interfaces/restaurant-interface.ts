@@ -1,3 +1,5 @@
+import { UserInterface } from './user-interface';
+
 export interface RestaurantInferface {
 	id?: number;
 	name?: string;
@@ -40,6 +42,7 @@ export interface RestaurantInferface {
 	distance?: number;
 	can_evaluate?: boolean;
 	user_evaluation?: number;
+	users?: UserInterface[];
 }
 
 export interface FoodTypeInterface {
