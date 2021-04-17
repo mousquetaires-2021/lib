@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { UserInferface } from 'lib/interfaces/user-interface';
 import { BehaviorSubject } from 'rxjs';
 import { ServerService } from '../http-server/server.service';
+import { RestaurantService } from '../restaurant/restaurant.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -9,7 +10,7 @@ import { ServerService } from '../http-server/server.service';
 export class UserService {
 	user: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
-	constructor(private serverService: ServerService) {}
+	constructor(private serverService: ServerService, private restaurantService: RestaurantService) {}
 
 	setUser(user) {
 		this.user.next(user);
@@ -90,7 +91,10 @@ export class UserService {
 
 	logout() {
 		return this.serverService.get('auths/logout').then(() => {
-			this.serverService.setToken(null);
+			this.restaurantService.restaurants.next([]);
+			this.restaurantService.restaurant.next(null);
+			this.user.next(null);
+			this.serverService.removeToken();
 		});
 	}
 

@@ -17,6 +17,7 @@ import { SiteFooterComponent } from './site-footer/site-footer.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { RestaurantItemComponent } from './restaurant-item/restaurant-item.component';
 import { SearchIconComponent } from './search-icon/search-icon.component';
+import { PipesModule } from 'lib/pipes/pipes.module';
 
 const list = [
 	LoadingComponent,
@@ -35,7 +36,15 @@ const list = [
 
 @NgModule({
 	declarations: [ ...list ],
-	imports: [ CommonModule, RouterModule, MaterialModule, NgSelectModule, FormsModule, ReactiveFormsModule ],
+	imports: [
+		CommonModule,
+		RouterModule,
+		MaterialModule,
+		NgSelectModule,
+		FormsModule,
+		ReactiveFormsModule,
+		PipesModule
+	],
 	providers: [ NgxImageCompressService ],
 	exports: list
 })
