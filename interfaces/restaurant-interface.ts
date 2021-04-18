@@ -43,6 +43,8 @@ export interface RestaurantInferface {
 	can_evaluate?: boolean;
 	user_evaluation?: number;
 	users?: UserInterface[];
+	updated_at?: Date;
+	nbProducts?: number;
 }
 
 export interface FoodTypeInterface {
