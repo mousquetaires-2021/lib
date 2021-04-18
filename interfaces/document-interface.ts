@@ -1,5 +1,5 @@
 export interface DocumentInterface {
-	id?: string;
+	id?: number;
 	name?: string;
 	is_verify?: string;
 	file?: string;
