@@ -100,4 +100,8 @@ export class RestaurantService {
 	sentAdminMessage(params) {
 		return this.serverService.post('restaurants/sent-admin-message', params);
 	}
+
+	getMapRestaurants() {
+		return this.serverService.get('restaurants/map-list').then((data) => data.data || []);
+	}
 }
