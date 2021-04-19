@@ -1,6 +1,6 @@
 export interface DeliverProfilInterface {
 	user_id?: number;
-	status?: number;
+	deliver_status?: number;
 	deliver_way?: string;
 	deliver_zone?: string;
 	photo?: string;
