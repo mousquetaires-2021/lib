@@ -18,4 +18,16 @@ export class DeliverService {
 	updateProfil(params) {
 		return this.serverService.put('delivers/update-account-profil', params).then((data) => data.data);
 	}
+
+	getDelivers() {
+		return this.serverService.get('delivers/get-list').then((data) => data.data || []);
+	}
+
+	getAdminDetail(id) {
+		return this.serverService.get('delivers/get-admin-details/' + id).then((data) => data.data);
+	}
+
+	adminUpdateProfilStatus(params) {
+		return this.serverService.put('delivers/admin-update-account-profil', params).then((data) => data.data);
+	}
 }
