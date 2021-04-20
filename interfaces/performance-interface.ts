@@ -11,4 +11,5 @@ export interface PerformanceInferface {
 	totalDelivreeticFee?: number;
 	totalDelivreeticFeeHT?: number;
 	totalTransfer?: number;
+	totalForRestaurant?: number;
 }
