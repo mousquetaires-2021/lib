@@ -96,4 +96,12 @@ export class RestaurantService {
 	evaluate(restaurantId, note) {
 		return this.serverService.put('restaurants/evaluate', { restaurantId, note }).then((data) => data.data || null);
 	}
+
+	sentAdminMessage(params) {
+		return this.serverService.post('restaurants/sent-admin-message', params);
+	}
+
+	getMapRestaurants() {
+		return this.serverService.get('restaurants/map-list').then((data) => data.data || []);
+	}
 }

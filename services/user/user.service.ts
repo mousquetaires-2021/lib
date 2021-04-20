@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { UserInferface } from 'lib/interfaces/user-interface';
+import { UserInterface } from 'lib/interfaces/user-interface';
 import { BehaviorSubject } from 'rxjs';
 import { ServerService } from '../http-server/server.service';
 import { RestaurantService } from '../restaurant/restaurant.service';
@@ -58,7 +58,7 @@ export class UserService {
 		});
 	}
 
-	createAccount(params: UserInferface) {
+	createAccount(params: UserInterface) {
 		return this.serverService.post('users/create-account', params).then((data) => {
 			this.serverService.setToken(data.token);
 			return true;
