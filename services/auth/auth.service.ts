@@ -17,7 +17,7 @@ export class AuthService {
 			return tmpUser;
 		} else {
 			try {
-				const http = await this.userInfos();
+				const http = await this.userInfosWithoutError();
 				if (jwToken == null || !http.user) {
 					this.userService.setUser(null);
 					return null;
