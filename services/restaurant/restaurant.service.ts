@@ -104,4 +104,8 @@ export class RestaurantService {
 	getMapRestaurants() {
 		return this.serverService.get('restaurants/map-list').then((data) => data.data || []);
 	}
+
+	relanceMenuNotComplete(params) {
+		return this.serverService.post('restaurants/sent-relance-mail-menu-not-complete', params);
+	}
 }
