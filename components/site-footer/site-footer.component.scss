@@ -19,10 +19,6 @@ a {
 		flex: 1;
 		margin-right: 16px;
 
-		&.about {
-			flex: 2;
-		}
-
 		&:last-child {
 			margin-right: 0;
 		}
@@ -82,4 +78,9 @@ img {
 .copyright {
 	margin-top: 24px;
 	text-align: center;
+}
+
+.umih {
+	height: 60px;
+	max-height: 60px;
 }

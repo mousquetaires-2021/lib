@@ -12,6 +12,11 @@
 		width: 80%;
 	}
 
+	&.width-500 .popup > div {
+		width: 90%;
+		max-width: 500px;
+	}
+
 	&.extra-large .popup > div {
 		width: 90%;
 		height: 90%;
