@@ -8,7 +8,7 @@ interface OptionsInterface {
 }
 
 @Component({
-	selector: 'popup',
+	selector: 'del-popup',
 	templateUrl: './popup.component.html',
 	styleUrls: [ './popup.component.scss' ]
 })
