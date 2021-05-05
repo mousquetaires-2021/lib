@@ -44,7 +44,7 @@ export interface RestaurantInferface {
 	user_evaluation?: number;
 	users?: UserInterface[];
 	updated_at?: Date;
-	nbProducts?: number;
+	nb_products?: number;
 }
 
 export interface FoodTypeInterface {
