@@ -45,6 +45,7 @@ export interface RestaurantInferface {
 	users?: UserInterface[];
 	updated_at?: Date;
 	nb_products?: number;
+	average_time_to_eat?: number;
 }
 
 export interface FoodTypeInterface {
