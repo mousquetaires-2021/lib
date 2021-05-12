@@ -18,6 +18,10 @@
 		align-items: flex-end;
 		justify-content: flex-start;
 		background-color: fColor(cfarine);
+
+		&.no-photo {
+			height: 64px;
+		}
 	}
 
 	.title {
@@ -56,6 +60,7 @@
 		align-items: center;
 		display: flex;
 		margin-top: 7px;
+		min-width: 35px;
 
 		img {
 			margin-right: 4px;
@@ -84,5 +89,11 @@
 		padding: 0 9px;
 		font-size: 11px;
 		font-weight: bold;
+		color: fColor(cblack);
 	}
+}
+
+.in-comming {
+	font-size: 14px;
+	color: fColor(cblack);
 }
