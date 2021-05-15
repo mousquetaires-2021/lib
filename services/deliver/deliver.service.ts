@@ -11,6 +11,10 @@ export class DeliverService {
 		return this.serverService.get('delivers/get-account-status').then((data) => data.data);
 	}
 
+	getDetailStatus() {
+		return this.serverService.get('delivers/get-account-detail-status').then((data) => data.data);
+	}
+
 	getProfil() {
 		return this.serverService.get('delivers/get-account-profil').then((data) => data.data);
 	}
@@ -29,5 +33,13 @@ export class DeliverService {
 
 	adminUpdateProfilStatus(params) {
 		return this.serverService.put('delivers/admin-update-account-profil', params).then((data) => data.data);
+	}
+
+	iAmReady() {
+		return this.serverService.put('delivers/i-am-ready').then((data) => data.data);
+	}
+
+	iAmFinish() {
+		return this.serverService.put('delivers/i-am-finish').then((data) => data.data);
 	}
 }
