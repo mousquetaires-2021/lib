@@ -7,7 +7,7 @@
   <div class="note" *ngIf="restaurant.average_evaluation"><img src="/lib-assets/green-star.svg" />
     {{restaurant.average_evaluation}}</div>
 </div>
-<div class="sub-name"><span>{{(restaurant.type || '').split(',').join(', ')}}</span>
+<div class="sub-name"><span>{{restaurant.type}}</span>
   {{restaurant.type ? ' - ' : ''}}
   {{convertPriceToDollars(restaurant.average_pricing)}}
 </div>
@@ -17,5 +17,5 @@
   <i class="material-icons" *ngIf="restaurant.eat_in">local_dining</i>
 </div>
 <div class="in-comming" *ngIf="!restaurant.id">
-  Bientôt par Delivreetic
+  Bientôt partenaire Delivreetic
 </div>
