@@ -32,6 +32,10 @@ a {
 	color: fColor(primary) !important;
 }
 
+.color-red {
+	color: fColor(cred) !important;
+}
+
 .horizontal-scroll {
 	display: flex;
 	overflow-x: scroll;
