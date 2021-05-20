@@ -1,4 +1,5 @@
-<div class="image" [ngStyle]="{'background-image': 'url('+restaurant.photo+')'}">
+<div class="image" [class.no-photo]="restaurant.photo ? false : true"
+  [ngStyle]="restaurant.photo ? {'background-image': 'url('+restaurant.photo+')'} : {}">
   <div *ngIf="restaurant.distance" class="distance">{{getStringDistance(restaurant.distance)}}</div>
 </div>
 <div class="title">
@@ -6,12 +7,17 @@
   <div class="note" *ngIf="restaurant.average_evaluation"><img src="/lib-assets/green-star.svg" />
     {{restaurant.average_evaluation}}</div>
 </div>
-<div class="sub-name"><span>{{(restaurant.type || '').split(',').join(', ')}}</span>
+<div class="sub-name"><span>{{restaurant.type}}</span>
   {{restaurant.type ? ' - ' : ''}}
   {{convertPriceToDollars(restaurant.average_pricing)}}
 </div>
 <div class="eat-options">
-  <i class="material-icons" *ngIf="restaurant.delivery && restaurant.distance <= 6">directions_bike</i>
+  <i class="material-icons"
+    *ngIf="restaurant.outOffdelivery === false && restaurant.delivery && restaurant.distance <= 6">directions_bike</i>
+  <i class="material-icons color-red" *ngIf="restaurant.outOffdelivery">directions_bike</i>
   <i class="material-icons" *ngIf="restaurant.take_away">local_mall</i>
   <i class="material-icons" *ngIf="restaurant.eat_in">local_dining</i>
+</div>
+<div class="in-comming" *ngIf="!restaurant.id">
+  Bientôt partenaire Delivreetic
 </div>

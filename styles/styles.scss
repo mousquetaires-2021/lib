@@ -32,6 +32,10 @@ a {
 	color: fColor(primary) !important;
 }
 
+.color-red {
+	color: fColor(cred) !important;
+}
+
 .horizontal-scroll {
 	display: flex;
 	overflow-x: scroll;
@@ -55,6 +59,10 @@ img {
 
 .text-align-center {
 	text-align: center;
+}
+
+.text-align-right {
+	text-align: right;
 }
 
 .ms-box {
