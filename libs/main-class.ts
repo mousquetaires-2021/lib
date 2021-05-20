@@ -18,6 +18,7 @@ import {
 	DELIVER_WAY,
 	DELIVER_WAY_LABEL
 } from 'lib/constants/delivers';
+import { BOOKING_STATUS, BOOKING_STATUS_LABEL } from 'lib/constants/booking';
 
 export class MainClass {
 	watcherList: Subscription[] = [];
@@ -36,6 +37,8 @@ export class MainClass {
 	public DELIVER_WAY_LABEL = DELIVER_WAY_LABEL;
 	public DELIVER_DEPARTEMENT = DELIVER_DEPARTEMENT;
 	public DELIVER_DEPARTEMENT_LABEL = DELIVER_DEPARTEMENT_LABEL;
+	public BOOKING_STATUS = BOOKING_STATUS;
+	public BOOKING_STATUS_LABEL = BOOKING_STATUS_LABEL;
 	public environment = environment;
 
 	watch(sub) {
@@ -124,4 +127,31 @@ export class MainClass {
 
 		return total;
 	};
+
+	public dayName = (date) => {
+		switch (date.getDay()) {
+			case 1:
+				return 'lundi';
+			case 2:
+				return 'mardi';
+			case 3:
+				return 'mercredi';
+			case 4:
+				return 'jeudi';
+			case 5:
+				return 'vendredi';
+			case 6:
+				return 'samedi';
+			case 0:
+				return 'dimanche';
+		}
+	};
+
+	public getStringDistance(distanceInKm) {
+		if (distanceInKm > 1) {
+			return Math.round(distanceInKm * 100) / 100 + ' km.';
+		} else {
+			return Math.floor(distanceInKm * 1000) + ' m.';
+		}
+	}
 }

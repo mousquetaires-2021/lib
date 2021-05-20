@@ -6,6 +6,7 @@ export interface RestaurantInferface {
 	photo?: string;
 	status?: string;
 	siret?: string;
+	vat?: string;
 	email?: string;
 	phone?: string;
 	rib?: string;
@@ -46,6 +47,8 @@ export interface RestaurantInferface {
 	updated_at?: Date;
 	nb_products?: number;
 	average_time_to_eat?: number;
+	nb_place_for_eat?: number;
+	outOffdelivery?: boolean;
 }
 
 export interface FoodTypeInterface {

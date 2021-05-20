@@ -29,8 +29,8 @@ export class OrderService {
 		return this.serverService.post('orders/confirm-order', { order_id: orderId }).then((data) => data.data || null);
 	}
 
-	requestOrder(orderId: number) {
-		return this.serverService.post('orders/request-order', { order_id: orderId }).then((data) => data.data || null);
+	requestOrder(params) {
+		return this.serverService.post('orders/request-order', params).then((data) => data.data || null);
 	}
 
 	getMyOrders() {

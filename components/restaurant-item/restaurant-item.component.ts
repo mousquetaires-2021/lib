@@ -14,12 +14,4 @@ export class RestaurantItemComponent extends MainClass implements OnInit {
 	}
 
 	ngOnInit() {}
-
-	getStringDistance(distanceInKm) {
-		if (distanceInKm > 1) {
-			return Math.round(distanceInKm * 100) / 100 + ' km.';
-		} else {
-			return Math.floor(distanceInKm * 1000) + ' m.';
-		}
-	}
 }

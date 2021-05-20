@@ -14,4 +14,10 @@ export class BookingService {
 	updateStatus(params) {
 		return this.serverService.put('booking/update-restaurant-status', params).then((data) => data.data || null);
 	}
+
+	getRestaurantDay(date: Date, restaurantId: number) {
+		return this.serverService
+			.post('booking/get-restaurant-booking-date', { date, restaurantId })
+			.then((data) => data.data || []);
+	}
 }
