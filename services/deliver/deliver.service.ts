@@ -42,4 +42,8 @@ export class DeliverService {
 	iAmFinish() {
 		return this.serverService.put('delivers/i-am-finish').then((data) => data.data);
 	}
+
+	getDeliverZones() {
+		return this.serverService.get('delivers/get-zones').then((data) => data.data || []);
+	}
 }
