@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ServerService } from '../http-server/server.service';
 
 @Injectable({
@@ -41,5 +42,55 @@ export class DeliverService {
 
 	iAmFinish() {
 		return this.serverService.put('delivers/i-am-finish').then((data) => data.data);
+	}
+
+	getDeliverZones() {
+		return this.serverService.get('delivers/get-zones').then((data) => data.data || []);
+	}
+
+	getLabelDeliverZones() {
+		return this.serverService.get('delivers/get-label-zones').then((data) => data.data || []);
+	}
+
+	updatePosition(latitude: number, longitude: number) {
+		return this.serverService.put('delivers/update-position', { latitude, longitude });
+	}
+
+	getOrdersToCatch() {
+		return this.serverService.get('delivers/get-orders-to-catch').then((data) => data.data || []);
+	}
+
+	watchOrders() {
+		let observable: Observable<any>;
+		let intId;
+
+		observable = new Observable((observer) => {
+			const callback = () => {
+				this.getOrdersToCatch()
+					.then((l) => {
+						observer.next(l);
+
+						intId = setTimeout(() => {
+							callback();
+						}, 10000);
+					})
+					.catch(() => {
+						intId = setTimeout(() => {
+							callback();
+						}, 30000);
+					});
+			};
+
+			callback();
+
+			return () => {
+				//This function is called when observer unsubscribes
+				if (intId) {
+					clearTimeout(intId);
+				}
+			};
+		});
+
+		return observable;
 	}
 }
