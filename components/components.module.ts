@@ -18,6 +18,7 @@ import { SiteHeaderComponent } from './site-header/site-header.component';
 import { RestaurantItemComponent } from './restaurant-item/restaurant-item.component';
 import { SearchIconComponent } from './search-icon/search-icon.component';
 import { PipesModule } from 'lib/pipes/pipes.module';
+import { NeedAccountComponent } from './need-account/need-account.component';
 
 const list = [
 	LoadingComponent,
@@ -31,7 +32,8 @@ const list = [
 	SiteFooterComponent,
 	SiteHeaderComponent,
 	RestaurantItemComponent,
-	SearchIconComponent
+	SearchIconComponent,
+	NeedAccountComponent
 ];
 
 @NgModule({
