@@ -5,6 +5,8 @@ export interface DeliverProfilInterface {
 	deliver_zone?: string;
 	photo?: string;
 	siren?: string;
+	vat_number?: string;
+	vat_pecent?: number;
 	photo_identity?: string;
 	photo_home_address?: string;
 	full_address?: string;

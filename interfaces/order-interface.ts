@@ -18,6 +18,10 @@ export interface OrderInferface {
 	service_charge?: number; // equal user_service_charge_sum
 	transferDone?: boolean;
 	public_token?: string;
+	delivery_option?: string;
+	delivery_pricing?: number;
+	order_full_address?: string;
+	delivery_note?: string;
 }
 
 export interface ProductOrderInterface {
