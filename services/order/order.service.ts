@@ -65,6 +65,10 @@ export class OrderService {
 		return this.serverService.put('orders/finish-order/' + id).then((data) => data.data || null);
 	}
 
+	deliverTakeAway(id: number) {
+		return this.serverService.put('orders/deliver-take-away/' + id).then((data) => data.data || null);
+	}
+
 	cancelOrder(id: number, raison: string) {
 		return this.serverService.put('orders/cancel-order/' + id, { raison }).then((data) => data.data || null);
 	}
