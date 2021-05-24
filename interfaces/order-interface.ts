@@ -15,6 +15,7 @@ export interface OrderInferface {
 	user?: UserInterface;
 	user_service_charge_sum?: number;
 	restaurant_service_charge_sum?: number;
+	delivery_service_charge?: number;
 	service_charge?: number; // equal user_service_charge_sum
 	transferDone?: boolean;
 	public_token?: string;
@@ -24,6 +25,7 @@ export interface OrderInferface {
 	delivery_note?: string;
 	distanceString?: string;
 	distance?: number;
+	order_distance?: number;
 }
 
 export interface ProductOrderInterface {

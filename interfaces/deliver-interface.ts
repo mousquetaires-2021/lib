@@ -1,3 +1,5 @@
+import { UserInterface } from './user-interface';
+
 export interface DeliverProfilInterface {
 	user_id?: number;
 	deliver_status?: number;
@@ -15,4 +17,5 @@ export interface DeliverProfilInterface {
 	'user.last_name'?: string;
 	'user.email'?: string;
 	'user.phone'?: string;
+	user?: UserInterface;
 }

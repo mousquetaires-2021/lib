@@ -8,6 +8,14 @@ import { ServerService } from '../http-server/server.service';
 export class DeliverService {
 	constructor(private serverService: ServerService) {}
 
+	getOrderDetails(id: number) {
+		return this.serverService.get('delivers/get-order-details/' + id).then((data) => data.data);
+	}
+
+	getMyOrders() {
+		return this.serverService.get('delivers/get-my-orders').then((data) => data.data || []);
+	}
+
 	getStatus() {
 		return this.serverService.get('delivers/get-account-status').then((data) => data.data);
 	}
