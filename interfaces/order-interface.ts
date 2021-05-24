@@ -22,6 +22,8 @@ export interface OrderInferface {
 	delivery_pricing?: number;
 	order_full_address?: string;
 	delivery_note?: string;
+	distanceString?: string;
+	distance?: number;
 }
 
 export interface ProductOrderInterface {
