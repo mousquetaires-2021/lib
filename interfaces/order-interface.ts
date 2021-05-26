@@ -26,6 +26,8 @@ export interface OrderInferface {
 	distanceString?: string;
 	distance?: number;
 	order_distance?: number;
+	order_longitude?: number;
+	order_latitude?: number;
 }
 
 export interface ProductOrderInterface {
