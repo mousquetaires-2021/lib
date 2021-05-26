@@ -9,6 +9,7 @@ import { RestaurantService } from '../restaurant/restaurant.service';
 })
 export class UserService {
 	user: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+	position: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
 	constructor(private serverService: ServerService, private restaurantService: RestaurantService) {}
 
@@ -112,5 +113,11 @@ export class UserService {
 
 	removeNotificationsToken(token) {
 		return this.serverService.post('notifications/remove', { token });
+	}
+
+	addForcePosition() {
+		return new Promise((resolve, reject) => {
+			reject('No device');
+		});
 	}
 }
