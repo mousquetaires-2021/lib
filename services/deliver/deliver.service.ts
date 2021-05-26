@@ -8,6 +8,14 @@ import { ServerService } from '../http-server/server.service';
 export class DeliverService {
 	constructor(private serverService: ServerService) {}
 
+	getOrderDetails(id: number) {
+		return this.serverService.get('delivers/get-order-details/' + id).then((data) => data.data);
+	}
+
+	getMyOrders() {
+		return this.serverService.get('delivers/get-my-orders').then((data) => data.data || []);
+	}
+
 	getStatus() {
 		return this.serverService.get('delivers/get-account-status').then((data) => data.data);
 	}
@@ -60,6 +68,18 @@ export class DeliverService {
 		return this.serverService.get('delivers/get-orders-to-catch').then((data) => data.data || []);
 	}
 
+	checkDeliveryStatus() {
+		return this.serverService.get('delivers/check-delivery-status').then((data) => data.data);
+	}
+
+	onDeliveryIsDone(orderId: number) {
+		return this.serverService.post('delivers/delivery-is-done', { orderId }).then((data) => data.data);
+	}
+
+	acceptOrder(orderId: number) {
+		return this.serverService.post('delivers/accept-order', { orderId }).then((data) => data.data);
+	}
+
 	watchOrders() {
 		let observable: Observable<any>;
 		let intId;
@@ -72,12 +92,12 @@ export class DeliverService {
 
 						intId = setTimeout(() => {
 							callback();
-						}, 10000);
+						}, 120000);
 					})
 					.catch(() => {
 						intId = setTimeout(() => {
 							callback();
-						}, 30000);
+						}, 60000);
 					});
 			};
 
