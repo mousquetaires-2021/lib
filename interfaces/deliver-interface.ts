@@ -3,6 +3,7 @@ import { UserInterface } from './user-interface';
 export interface DeliverProfilInterface {
 	user_id?: number;
 	deliver_status?: number;
+	status?: number;
 	deliver_way?: string;
 	deliver_zone?: string;
 	photo?: string;
