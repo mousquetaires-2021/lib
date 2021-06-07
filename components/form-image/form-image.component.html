@@ -1,4 +1,5 @@
-<img *ngIf="preview || showForce" [src]="value | sanitizeResourceUrl" [ngStyle]="{'max-height': maxWidth+'px'}" />
+<img *ngIf="value && (preview || showForce)" [src]="value | sanitizeResourceUrl"
+  [ngStyle]="{'max-height': maxWidth+'px'}" />
 <button (click)="onChangeRestaurantPhoto()" class="outline" type="button">{{value ? 'Changer l\'image' : 'Choisir une
   image'}}
 </button>

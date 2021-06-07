@@ -19,7 +19,8 @@
 
 	&.extra-large .popup > div {
 		width: 90%;
-		height: 90%;
+		height: 90% !important;
+		max-height: 90% !important;
 	}
 
 	&.no-blur .popup {

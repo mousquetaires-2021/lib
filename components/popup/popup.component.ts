@@ -46,9 +46,19 @@ export class PopupComponent extends MainClass implements OnInit, OnDestroy {
 		super();
 	}
 
-	ngOnInit() {}
+	ngOnInit() {
+		const element = document.getElementById('hubspot-messages-iframe-container');
+		if (element) {
+			element.style.visibility = 'hidden';
+		}
+	}
 
-	ngOnDestroy() {}
+	ngOnDestroy() {
+		const element = document.getElementById('hubspot-messages-iframe-container');
+		if (element) {
+			element.style.visibility = 'visible';
+		}
+	}
 
 	onSelectAction(action) {
 		this.selectedAction.emit({ ...action, optionValue: this.selectedOptions });

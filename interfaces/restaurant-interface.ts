@@ -73,6 +73,10 @@ export interface FoodInterface {
 	average_preparation_duration?: number;
 	max_quantity_day?: number;
 	type?: string;
+	nb_accompanying?: number;
+	min_accompanying?: number;
+	max_accompanying?: number;
+	accompanyings?: AccompanyingInterface[];
 }
 
 export interface RestaurantOpeningDay {
@@ -87,4 +91,16 @@ export interface RangeOpeningDay {
 	startMinute?: number;
 	endHour?: number;
 	endMinute?: number;
+}
+
+export interface AccompanyingInterface {
+	id?: number;
+	name?: string;
+	food_id?: number;
+	min_selection?: number;
+	max_selection?: number;
+	price?: number;
+	vat_pecent?: number;
+	is_alcohol?: number;
+	status?: number;
 }
