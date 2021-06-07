@@ -31,6 +31,13 @@ export class ServerService {
 
 	handleError(error) {
 		console.log('handleError', error);
+		if (error.status) {
+			console.log('error.status', error.status);
+		}
+		if (error.toString) {
+			console.log('error.toString', error.toString());
+		}
+
 		if (error.status === 403) {
 			window.location.href = '/';
 			alert('Veuillez vous reconnecter');
@@ -76,22 +83,27 @@ export class ServerService {
 
 	/* HTTPs request */
 	get(url, options = {}): Promise<any> {
+		console.log('HTTP GET ' + this.getUrl(url));
 		return this._http.get(this.getUrl(url), { ...this.getOptions(), ...options }).catch(this.handleError);
 	}
 
 	getWithoutError(url, options = {}): Promise<any> {
+		console.log('HTTP GET ' + this.getUrl(url));
 		return this._http.get(this.getUrl(url), { ...this.getOptions(), ...options });
 	}
 
 	post(url, params = {}, options = {}): Promise<any> {
+		console.log('HTTP POST ' + this.getUrl(url));
 		return this._http.post(this.getUrl(url), params, { ...this.getOptions(), ...options }).catch(this.handleError);
 	}
 
 	put(url, params = {}, options = {}): Promise<any> {
+		console.log('HTTP PUT ' + this.getUrl(url));
 		return this._http.put(this.getUrl(url), params, { ...this.getOptions(), ...options }).catch(this.handleError);
 	}
 
 	delete(url, options = {}): Promise<any> {
+		console.log('HTTP DELETE ' + this.getUrl(url));
 		return this._http.delete(this.getUrl(url), { ...this.getOptions(), ...options }).catch(this.handleError);
 	}
 

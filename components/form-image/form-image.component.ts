@@ -20,6 +20,7 @@ export class FormImageComponent implements OnInit, ControlValueAccessor {
 	@Input() maxHeight: number = 300;
 	@Input() preview: boolean = true;
 	@Input() previewBt: boolean = false;
+	@Input() photoFromParent = null;
 	disabled = false;
 	showForce = false;
 	value = '';
@@ -30,7 +31,7 @@ export class FormImageComponent implements OnInit, ControlValueAccessor {
 	ngOnInit() {}
 
 	onChangeRestaurantPhoto() {
-		this.imageCompress.uploadFile().then(({ image, orientation }) => {
+		const callback = (image, orientation) => {
 			this.imageCompress
 				.compressFile(image, orientation, 100, 90)
 				.then((result) => {
@@ -41,7 +42,17 @@ export class FormImageComponent implements OnInit, ControlValueAccessor {
 					this.onChange(this.value);
 				})
 				.catch(alert);
-		});
+		};
+
+		if (this.photoFromParent) {
+			this.photoFromParent().then((image) => {
+				callback(image, null);
+			});
+		} else {
+			this.imageCompress.uploadFile().then(({ image, orientation }) => {
+				callback(image, orientation);
+			});
+		}
 	}
 
 	writeValue(value: string): void {

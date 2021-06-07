@@ -113,4 +113,8 @@ export class DeliverService {
 
 		return observable;
 	}
+
+	getAllPositions() {
+		return this.serverService.get('delivers/get-all-positions').then((data) => data.data || []);
+	}
 }

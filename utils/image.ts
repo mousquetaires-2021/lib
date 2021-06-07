@@ -54,7 +54,11 @@ export function resizeBase64AutoFit(base64String, maxWidth, maxHeight): Promise<
 			canvas.height = height;
 			ctx.drawImage(canvasCopy, 0, 0, canvasCopy.width, canvasCopy.height, 0, 0, canvas.width, canvas.height);
 
-			resolve(canvas.toDataURL());
+			const dataUrl = canvas.toDataURL();
+			var head = 'data:image/png;base64,';
+			var imgFileSize = Math.round((dataUrl.length - head.length) * 3 / 4);
+			console.log('image size', imgFileSize);
+			resolve(dataUrl);
 		};
 
 		img.onerror = function() {

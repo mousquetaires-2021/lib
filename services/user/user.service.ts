@@ -115,7 +115,7 @@ export class UserService {
 		return this.serverService.post('notifications/remove', { token });
 	}
 
-	addForcePosition() {
+	addForcePosition(alert = true) {
 		return new Promise((resolve, reject) => {
 			reject('No device');
 		});
