@@ -13,4 +13,5 @@ export interface UserInterface {
 	photo?: string;
 	phone?: string;
 	password?: string;
+	public_token?: string;
 }
