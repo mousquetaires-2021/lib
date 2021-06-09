@@ -108,4 +108,12 @@ export class RestaurantService {
 	relanceMenuNotComplete(params) {
 		return this.serverService.post('restaurants/sent-relance-mail-menu-not-complete', params);
 	}
+
+	getRushourStatus(restaurantId: number) {
+		return this.serverService.post('rushour/get-status', { restaurantId }).then((data) => data.data || null);
+	}
+
+	updateRushourStatus(restaurantId: number, clientId: string) {
+		return this.serverService.post('rushour/client_id', { restaurantId, clientId });
+	}
 }
