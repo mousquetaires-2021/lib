@@ -1,3 +1,3 @@
-<div class="less" (click)="setDelta(-1)">-</div>
+<div class="less" (click)="setDelta(-1)" [class.active]="min === null || min <= value - 1">-</div>
 <p>{{value}}</p>
-<div class="plus" (click)="setDelta(1)">+</div>
+<div class="plus" (click)="setDelta(1)" [class.active]="max === null || max > value">+</div>

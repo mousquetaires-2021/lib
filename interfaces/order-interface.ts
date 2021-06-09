@@ -37,9 +37,12 @@ export interface ProductOrderInterface {
 	original_price?: number;
 	original_name?: string;
 	original_type?: string;
+	min_accompanying?: number;
+	max_accompanying?: number;
 	'food.description'?: string;
 	'food.id'?: number;
 	'food.name'?: string;
 	'food.price'?: number;
 	'food.tva'?: number;
+	accompanyings?: ProductOrderInterface[];
 }

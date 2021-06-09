@@ -15,6 +15,9 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class FormCounterComponent implements OnInit, ControlValueAccessor {
 	@Input() value: number = 0;
+	@Input() lockCounter: boolean = false;
+	@Input() min: number = null;
+	@Input() max: number = null;
 	@Output() onChangeValue = new EventEmitter();
 	disabled = false;
 
@@ -25,8 +28,17 @@ export class FormCounterComponent implements OnInit, ControlValueAccessor {
 	ngOnInit() {}
 
 	setDelta(delta) {
+		if (delta < 0 && this.min !== null && this.min > this.value - 1) {
+			return;
+		}
+		if (delta > 0 && this.max !== null && this.max < this.value) {
+			return;
+		}
+
 		if (this.value + delta >= 0) {
-			this.value += delta;
+			if (this.lockCounter === false) {
+				this.value += delta;
+			}
 			this.onChange(this.value);
 			this.onChangeValue.emit(this.value);
 		}
