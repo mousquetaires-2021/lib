@@ -51,6 +51,11 @@ export interface RestaurantInferface {
 	outOffdelivery?: boolean;
 }
 
+export interface MinimalRestaurantInterface {
+	name: string;
+	photo: string;
+}
+
 export interface FoodTypeInterface {
 	id?: number;
 	name?: string;

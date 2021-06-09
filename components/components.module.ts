@@ -19,6 +19,7 @@ import { RestaurantItemComponent } from './restaurant-item/restaurant-item.compo
 import { SearchIconComponent } from './search-icon/search-icon.component';
 import { PipesModule } from 'lib/pipes/pipes.module';
 import { NeedAccountComponent } from './need-account/need-account.component';
+import { MinimalRestaurantItemComponent } from './minimal-restaurant-item/minimal-restaurant-item.component';
 
 const list = [
 	LoadingComponent,
@@ -33,11 +34,12 @@ const list = [
 	SiteHeaderComponent,
 	RestaurantItemComponent,
 	SearchIconComponent,
-	NeedAccountComponent
+	NeedAccountComponent,
+	MinimalRestaurantItemComponent
 ];
 
 @NgModule({
-	declarations: [ ...list ],
+	declarations: [...list],
 	imports: [
 		CommonModule,
 		RouterModule,
@@ -47,7 +49,7 @@ const list = [
 		ReactiveFormsModule,
 		PipesModule
 	],
-	providers: [ NgxImageCompressService ],
+	providers: [NgxImageCompressService],
 	exports: list
 })
-export class ComponentsModule {}
+export class ComponentsModule { }
