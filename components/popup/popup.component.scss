@@ -23,6 +23,17 @@
 		max-height: 90% !important;
 	}
 
+	&.extra-large-bottom .popup {
+		align-items: flex-end;
+		padding-bottom: 16px;
+
+		> div {
+			width: 90%;
+			height: inherit;
+			min-height: inherit;
+		}
+	}
+
 	&.no-blur .popup {
 		-webkit-backdrop-filter: none;
 		backdrop-filter: none;
