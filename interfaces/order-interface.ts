@@ -36,13 +36,10 @@ export interface ProductOrderInterface {
 	quantity?: number;
 	original_price?: number;
 	original_name?: string;
+	original_description?: string;
 	original_type?: string;
+	original_tva?: number;
 	min_accompanying?: number;
 	max_accompanying?: number;
-	'food.description'?: string;
-	'food.id'?: number;
-	'food.name'?: string;
-	'food.price'?: number;
-	'food.tva'?: number;
 	accompanyings?: ProductOrderInterface[];
 }

@@ -18,7 +18,7 @@ export class OrderService {
 	}
 
 	updateOrder(params) {
-		return this.serverService.put('orders/update-order', params).then((data) => data.data || null);
+		return this.serverService.put('orders/update-order', params).then((data) => data.data);
 	}
 
 	updateOrderDelivery(params) {
@@ -79,5 +79,9 @@ export class OrderService {
 
 	adminUpdateOrderStatus(params) {
 		return this.serverService.put('orders/admin-update-status', params).then((data) => data.data || null);
+	}
+
+	removeOrderItem(orderLineId: number) {
+		return this.serverService.put('orders/remove-order-item', { orderLineId }).then((data) => data.data || null);
 	}
 }
