@@ -63,9 +63,11 @@ export class ServerService {
 	/* TOKEN */
 	getToken(): any {
 		if (this.userToken.getValue() == null) {
-			if (localStorage.getItem('token')) {
-				this.setToken(localStorage.getItem('token'));
-			}
+			try {
+				if (localStorage && localStorage.getItem('token')) {
+					this.setToken(localStorage.getItem('token'));
+				}
+			} catch (err) {}
 		}
 
 		return this.userToken.getValue();
