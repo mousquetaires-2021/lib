@@ -1,6 +1,7 @@
 import { UserInterface } from './user-interface';
 
 export interface DeliverProfilInterface {
+	id?: number;
 	user_id?: number;
 	deliver_status?: number;
 	status?: number;
