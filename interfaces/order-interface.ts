@@ -1,3 +1,4 @@
+import { DeliverProfilInterface } from './deliver-interface';
 import { RestaurantInferface } from './restaurant-interface';
 import { UserInterface } from './user-interface';
 
@@ -28,6 +29,7 @@ export interface OrderInferface {
 	order_distance?: number;
 	order_longitude?: number;
 	order_latitude?: number;
+	deliver?: DeliverProfilInterface;
 }
 
 export interface ProductOrderInterface {
