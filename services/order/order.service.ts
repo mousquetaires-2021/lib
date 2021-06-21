@@ -9,7 +9,7 @@ import { ServerService } from '../http-server/server.service';
 export class OrderService {
 	orders: BehaviorSubject<OrderInferface[]> = new BehaviorSubject<OrderInferface[]>([]);
 	orderSelected: BehaviorSubject<OrderInferface> = new BehaviorSubject<OrderInferface>(null);
-	constructor(private serverService: ServerService) {}
+	constructor(private serverService: ServerService) { }
 
 	getOrder(restaurantId: number) {
 		return this.serverService
@@ -67,6 +67,10 @@ export class OrderService {
 
 	deliverTakeAway(id: number) {
 		return this.serverService.put('orders/deliver-take-away/' + id).then((data) => data.data || null);
+	}
+
+	iGotDelivery(id: number) {
+		return this.serverService.put('orders/i-got-delivery/' + id).then((data) => data.data || null);
 	}
 
 	cancelOrder(id: number, raison: string) {
