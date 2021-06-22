@@ -3,6 +3,7 @@ import { UserInterface } from './user-interface';
 export interface DeliverProfilInterface {
 	id?: number;
 	user_id?: number;
+	identity_number?: string;
 	deliver_status?: number;
 	status?: number;
 	deliver_way?: string;
@@ -12,6 +13,7 @@ export interface DeliverProfilInterface {
 	vat_number?: string;
 	vat_pecent?: number;
 	photo_identity?: string;
+	photo_identity_verso?: string;
 	photo_home_address?: string;
 	full_address?: string;
 	rejection_reason?: string;
