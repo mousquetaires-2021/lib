@@ -6,7 +6,7 @@ import { ServerService } from '../http-server/server.service';
 	providedIn: 'root'
 })
 export class DeliverService {
-	constructor(private serverService: ServerService) {}
+	constructor(private serverService: ServerService) { }
 
 	getOrderDetails(id: number) {
 		return this.serverService.get('delivers/get-order-details/' + id).then((data) => data.data);
@@ -74,6 +74,10 @@ export class DeliverService {
 
 	onDeliveryIsDone(orderId: number) {
 		return this.serverService.post('delivers/delivery-is-done', { orderId }).then((data) => data.data);
+	}
+
+	onDeliveryIsDoneWithCode(orderId: number, code: string) {
+		return this.serverService.post('delivers/delivery-is-done-with-code', { orderId, code }).then((data) => data.data);
 	}
 
 	acceptOrder(orderId: number) {
