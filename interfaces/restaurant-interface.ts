@@ -4,6 +4,7 @@ export interface RestaurantInferface {
 	id?: number;
 	name?: string;
 	photo?: string;
+	logo?: string;
 	status?: string;
 	siret?: string;
 	vat?: string;
