@@ -14,7 +14,7 @@ export class RestaurantService {
 		null
 	);
 
-	constructor(private serverService: ServerService) {}
+	constructor(private serverService: ServerService) { }
 
 	getRestaurantDetails(params) {
 		return this.serverService.post('restaurants/get-details', params).then((data) => data.data || null);
@@ -119,5 +119,9 @@ export class RestaurantService {
 
 	getAll() {
 		return this.serverService.get('restaurants').then((data) => data.data || []);
+	}
+
+	getRestaurantPreview(token) {
+		return this.serverService.get('restaurants/preview/' + token).then((data) => data.data || null);
 	}
 }

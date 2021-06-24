@@ -10,6 +10,7 @@ export interface RestaurantInferface {
 	email?: string;
 	phone?: string;
 	rib?: string;
+	slug?: string;
 	delivery_address_number?: string;
 	delivery_address_street_name?: string;
 	delivery_address_postal_code?: string;
@@ -49,6 +50,7 @@ export interface RestaurantInferface {
 	average_time_to_eat?: number;
 	nb_place_for_eat?: number;
 	outOffdelivery?: boolean;
+	public_token?: string;
 }
 
 export interface FoodTypeInterface {
