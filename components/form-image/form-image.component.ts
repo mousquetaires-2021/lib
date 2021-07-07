@@ -70,4 +70,9 @@ export class FormImageComponent implements OnInit, ControlValueAccessor {
 	setDisabledState?(isDisabled: boolean): void {
 		this.disabled = isDisabled;
 	}
+
+	onRemove() {
+		this.value = null;
+		this.onChange(this.value);
+	}
 }
