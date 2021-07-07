@@ -1,33 +1,33 @@
-import { Injectable } from "@angular/core";
-import { ServerService } from "../http-server/server.service";
+import { Injectable } from '@angular/core'
+import { ServerService } from '../http-server/server.service'
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class PageService {
-  constructor(private serverService: ServerService) {}
+  constructor (private serverService: ServerService) {}
 
-  getPage(pageId) {
+  getPage (pageId) {
     return this.serverService
-      .get("pages/get-page/" + pageId)
-      .then((data) => data.data || null);
+      .get('pages/get-page/' + pageId)
+      .then((data) => data.data || null)
   }
 
-  getAllPage() {
+  getAllPage () {
     return this.serverService
-      .get("pages/get-all")
-      .then((data) => data.data || []);
+      .get('pages/get-all')
+      .then((data) => data.data || [])
   }
 
-  getPageDetails(pageId) {
+  getPageDetails (pageId) {
     return this.serverService
-      .get("pages/get-page-details/" + pageId)
-      .then((data) => data.data || null);
+      .get('pages/get-page-details/' + pageId)
+      .then((data) => data.data || null)
   }
 
-  adminUpdatePage(params) {
+  adminUpdatePage (params) {
     return this.serverService
-      .put("pages/admin-update-page", params)
-      .then((data) => data.data || null);
+      .put('pages/admin-update-page', params)
+      .then((data) => data.data || null)
   }
 }
