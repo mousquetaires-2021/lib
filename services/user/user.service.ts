@@ -11,19 +11,19 @@ export class UserService {
   user: BehaviorSubject<any> = new BehaviorSubject<any>(null)
   position: BehaviorSubject<any> = new BehaviorSubject<any>(null)
 
-  constructor(
+  constructor (
     private serverService: ServerService,
     private restaurantService: RestaurantService
   ) {}
 
-  setUser(user) {
+  setUser (user) {
     this.user.next(user)
 
     if (user) {
-      var _hsq = (window['_hsq'] = window['_hsq'] || [])
+      const _hsq = (window['_hsq'] = window['_hsq'] || [])
 
-      var userId = user.id
-      var isRegistered = !!userId
+      const userId = user.id
+      const isRegistered = !!userId
 
       if (isRegistered) {
         _hsq.push([
@@ -44,23 +44,23 @@ export class UserService {
     }
   }
 
-  me() {
+  me () {
     return this.serverService.get('users/me').then((data) => data.data || null)
   }
 
-  updateMe(params) {
+  updateMe (params) {
     return this.serverService
       .put('users/update-me', params)
       .then((data) => data.data || null)
   }
 
-  updatePasswordMe(params) {
+  updatePasswordMe (params) {
     return this.serverService
       .put('users/update-password-me', params)
       .then((data) => data.data || null)
   }
 
-  updateAccount(params) {
+  updateAccount (params) {
     return this.serverService
       .put('users/update-account', params)
       .then((data) => {
@@ -68,56 +68,58 @@ export class UserService {
       })
   }
 
-  createAccount(params: UserInterface) {
+  createAccount (params: UserInterface, saveToken = true) {
     return this.serverService
       .post('users/create-account', params)
       .then((data) => {
-        this.serverService.setToken(data.token)
+        if(saveToken) {
+          this.serverService.setToken(data.token)
+        }
         return true
       })
   }
 
-  getUsers() {
+  getUsers () {
     return this.serverService.get('users/list').then((data) => data.data || [])
   }
 
-  getCustomers() {
+  getCustomers () {
     return this.serverService
       .get('users/list-customers-only')
       .then((data) => data.data || [])
   }
 
-  getUser(id) {
+  getUser (id) {
     return this.serverService
       .get('users/get/' + id)
       .then((data) => data.data || null)
   }
 
-  mobileCreation(phone) {
+  mobileCreation (phone) {
     return this.serverService
       .post('users/mobile-creation', { phone })
       .then((data) => data.data || null)
   }
 
-  mobileValidation(phone, code) {
+  mobileValidation (phone, code) {
     return this.serverService
       .post('users/mobile-validation', { phone, code })
       .then((data) => data.data || null)
   }
 
-  accountForgotPassword(contact) {
+  accountForgotPassword (contact) {
     return this.serverService
       .put('users/forgot-password', { contact })
       .then((data) => data.data || null)
   }
 
-  lightForgotPassword(params) {
+  lightForgotPassword (params) {
     return this.serverService
       .put('users/light-forgot-password', params)
       .then((data) => data.data || null)
   }
 
-  logout() {
+  logout () {
     return this.serverService.get('auths/logout').then(() => {
       this.restaurantService.restaurants.next([])
       this.restaurantService.restaurant.next(null)
@@ -126,25 +128,25 @@ export class UserService {
     })
   }
 
-  userDetails() {
+  userDetails () {
     return this.serverService
       .get('users/account-details')
       .then((data) => data.data || null)
   }
 
-  updateUserDetails(params) {
+  updateUserDetails (params) {
     return this.serverService.put('users/update-account-details', params)
   }
 
-  updateNotificationsToken(token) {
+  updateNotificationsToken (token) {
     return this.serverService.post('notifications/update', { token })
   }
 
-  removeNotificationsToken(token) {
+  removeNotificationsToken (token) {
     return this.serverService.post('notifications/remove', { token })
   }
 
-  addForcePosition(alert = true) {
+  addForcePosition (alert = true) {
     return new Promise((resolve, reject) => {
       reject('No device')
     })
