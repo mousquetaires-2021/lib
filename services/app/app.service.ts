@@ -21,9 +21,6 @@ export class AppService {
 	if(!message && cleanUrl) {
 		this.authService.redirectUrl = null
 	}
-	
-	console.log("redirectUrl", this.authService.redirectUrl);
-
 
     this.needAccountToView.next(message);
   }

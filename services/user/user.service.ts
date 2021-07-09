@@ -126,9 +126,9 @@ export class UserService {
 
   updateNotificationsToken() {
     const token = this.token.getValue();
-	if(!token) {
-		return;
-	}
+    if (!token) {
+      return;
+    }
     const position = this.position.getValue();
     const latitude = position && position.latitude ? position.latitude : null;
     const longitude =
@@ -142,6 +142,10 @@ export class UserService {
       longitude,
       notifiable: userNotifiable ? 1 : 0,
     });
+  }
+
+  getNoficiationStatus() {
+    return this.serverService.get(`notifications/notification-status/${this.token.getValue()}`).then((data) => data.data);
   }
 
   removeNotificationsToken(token) {
