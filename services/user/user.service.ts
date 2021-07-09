@@ -11,7 +11,6 @@ import { RestaurantService } from "../restaurant/restaurant.service";
 export class UserService {
   token: BehaviorSubject<string> = new BehaviorSubject<string>(null);
   user: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  userNotifiable: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
   position: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   constructor(
@@ -23,9 +22,6 @@ export class UserService {
       this.updateNotificationsToken();
     });
     this.position.subscribe(() => {
-      this.updateNotificationsToken();
-    });
-    this.userNotifiable.subscribe(() => {
       this.updateNotificationsToken();
     });
   }
@@ -133,14 +129,24 @@ export class UserService {
     const latitude = position && position.latitude ? position.latitude : null;
     const longitude =
       position && position.longitude ? position.longitude : null;
-    const userNotifiable = this.userNotifiable.getValue();
 
     return this.serverService.postWithoutError("notifications/update", {
       token,
       type: environment.tokenType,
       latitude,
       longitude,
-      notifiable: userNotifiable ? 1 : 0,
+    });
+  }
+
+  updateNotificationsTokenEnable(status) {
+    const token = this.token.getValue();
+    if (!token) {
+      return;
+    }
+
+    return this.serverService.postWithoutError("notifications/update-enable", {
+      token,
+      notifiable: status ? 1 : 0
     });
   }
 
