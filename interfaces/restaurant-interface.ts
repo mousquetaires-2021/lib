@@ -53,6 +53,7 @@ export interface RestaurantInferface {
 	outOffdelivery?: boolean;
 	public_token?: string;
 	notify_restaurant_new_order?: string;
+	nb_deliver_arround?: number;
 }
 
 export interface FoodTypeInterface {
