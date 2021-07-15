@@ -10,9 +10,10 @@ export class NeedAccountComponent implements OnInit {
 	@Input() message: string;
 	constructor(private appService: AppService) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+	}
 
-	onClose() {
-		this.appService.needAccount(null);
+	onClose(cleanUrl = true) {
+		this.appService.needAccount(null, cleanUrl);
 	}
 }

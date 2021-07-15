@@ -99,6 +99,11 @@ export class ServerService {
 		return this._http.post(this.getUrl(url), params, { ...this.getOptions(), ...options }).catch(this.handleError);
 	}
 
+	postWithoutError(url, params = {}, options = {}): Promise<any> {
+		console.log('HTTP GET ' + this.getUrl(url));
+		return this._http.post(this.getUrl(url), params, { ...this.getOptions(), ...options });
+	}
+
 	put(url, params = {}, options = {}): Promise<any> {
 		console.log('HTTP PUT ' + this.getUrl(url));
 		return this._http.put(this.getUrl(url), params, { ...this.getOptions(), ...options }).catch(this.handleError);
