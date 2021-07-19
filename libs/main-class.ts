@@ -19,6 +19,7 @@ import {
 	DELIVER_WAY_LABEL
 } from 'lib/constants/delivers';
 import { BOOKING_STATUS, BOOKING_STATUS_LABEL } from 'lib/constants/booking';
+import { FOOD_CATEGORY_TYPE, FOOD_CATEGORY_TYPE_LABEL } from 'lib/constants/foodTypes';
 
 export class MainClass {
 	watcherList: Subscription[] = [];
@@ -39,6 +40,8 @@ export class MainClass {
 	public DELIVER_DEPARTEMENT_LABEL = DELIVER_DEPARTEMENT_LABEL;
 	public BOOKING_STATUS = BOOKING_STATUS;
 	public BOOKING_STATUS_LABEL = BOOKING_STATUS_LABEL;
+	public FOOD_CATEGORY_TYPE = FOOD_CATEGORY_TYPE;
+	public FOOD_CATEGORY_TYPE_LABEL = FOOD_CATEGORY_TYPE_LABEL;
 	public environment = environment;
 
 	watch(sub) {

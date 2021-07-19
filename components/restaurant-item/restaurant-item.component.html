@@ -7,7 +7,7 @@
   <div class="note" *ngIf="restaurant.average_evaluation"><img src="/lib-assets/green-star.svg" />
     {{restaurant.average_evaluation}}</div>
 </div>
-<div class="sub-name"><span>{{restaurant.type}}</span>
+<div class="sub-name"><span>{{type}}</span>
   {{restaurant.type ? ' - ' : ''}}
   {{convertPriceToDollars(restaurant.average_pricing)}}
 </div>
