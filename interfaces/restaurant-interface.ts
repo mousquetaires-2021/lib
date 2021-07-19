@@ -5,7 +5,7 @@ export interface RestaurantInferface {
 	name?: string;
 	photo?: string;
 	logo?: string;
-	status?: string;
+	status?: number;
 	siret?: string;
 	vat?: string;
 	email?: string;
@@ -52,6 +52,8 @@ export interface RestaurantInferface {
 	nb_place_for_eat?: number;
 	outOffdelivery?: boolean;
 	public_token?: string;
+	notify_restaurant_new_order?: string;
+	nb_deliver_arround?: number;
 }
 
 export interface FoodTypeInterface {
