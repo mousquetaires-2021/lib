@@ -16,7 +16,7 @@ export class RestaurantItemComponent extends MainClass implements OnChanges {
 
   ngOnChanges() {
     if (this.restaurant.type) {
-      this.type = this.restaurant.type.split(",").join(" ,");
+      this.type = this.restaurant.type.split(",").join(", ");
     } else {
       this.type = "";
     }
