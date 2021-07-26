@@ -50,6 +50,18 @@ button {
 		border-radius: 8px;
 		padding: 0 8px;
 
+		&.primary {
+			background-color: rgba(fColor(primary), 0.2);
+			border: 1px solid fColor(primary);
+			color: fColor(ckale);
+		}
+
+		&.large-height {
+			height: 51px;
+			line-height: 51px;
+			border-radius: 16px;
+		}
+
 		&.red {
 			border: 1px solid fColor(cred);
 			background-color: rgba(fColor(cred), 0.2);

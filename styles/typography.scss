@@ -74,5 +74,15 @@ span {
 		padding: 4px;
 		border-radius: 4px;
 		background-color: fColor(cgraylight);
+
+		&.red {
+			background-color: fColor(cred);
+			color: white;
+		}
+
+		&.green {
+			background-color: fColor(ckale);
+			color: white;
+		}
 	}
 }
