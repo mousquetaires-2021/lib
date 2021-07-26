@@ -197,4 +197,16 @@ export class MainClass {
       return Math.floor(distanceInKm * 1000) + " m.";
     }
   }
+
+  public onCopy(text) {
+    var dummy = document.createElement("input");
+
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+
+	alert('Copié')
+  }
 }

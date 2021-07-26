@@ -58,4 +58,8 @@ export class FoodService {
 	deleteFood(foodId) {
 		return this.serverService.delete('foods/delete-food/' + foodId).then((data) => data.data || null);
 	}
+
+	copyFood(foodId) {
+		return this.serverService.post('foods/copy-food/' + foodId).then((data) => data.data || null);
+	}
 }
