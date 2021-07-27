@@ -85,4 +85,10 @@ export class BookingService {
         return data
       });
   }
+
+  updateRestaurantBookingStatus(params) {
+    return this.serverService
+      .post("booking/update-restaurant-booking-status", params)
+      .then((data) => data.data || null);
+  }
 }
