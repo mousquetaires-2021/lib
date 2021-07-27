@@ -59,16 +59,9 @@ li {
 	&.xs {
 		font-size: 11px;
 	}
-
-	&.tag {
-		font-size: 11px;
-		padding: 4px;
-		border-radius: 4px;
-		background-color: fColor(cgraylight);
-	}
 }
 
-span {
+p, li, span {
 	&.tag {
 		font-size: 11px;
 		padding: 4px;

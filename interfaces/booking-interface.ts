@@ -1,8 +1,12 @@
-import { UserInterface } from './user-interface';
+import { RestaurantInferface } from "./restaurant-interface";
+import { UserInterface } from "./user-interface";
 
 export interface BookingInterface {
-	booking_status?: number;
-	nb_person?: number;
-	date_reservation?: number;
-	user?: UserInterface;
+  id?: number;
+  booking_status?: number;
+  nb_person?: number;
+  date_reservation?: Date;
+  user?: UserInterface;
+  rejection_raison?: string;
+  restaurant?: RestaurantInferface;
 }

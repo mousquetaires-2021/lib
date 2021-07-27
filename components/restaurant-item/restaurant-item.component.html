@@ -14,6 +14,7 @@
 <div class="eat-options">
   <i class="material-icons"
     *ngIf="restaurant.outOffdelivery === false && restaurant.delivery && restaurant.distance <= 6">directions_bike</i>
+  <i class="material-icons" *ngIf="restaurant.delivery && restaurant.distance === undefined">directions_bike</i>
   <i class="material-icons color-red" *ngIf="restaurant.outOffdelivery">directions_bike</i>
   <i class="material-icons" *ngIf="restaurant.take_away">local_mall</i>
   <i class="material-icons" *ngIf="restaurant.eat_in">local_dining</i>

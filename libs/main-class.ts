@@ -46,6 +46,7 @@ export class MainClass {
   public FOOD_CATEGORY_TYPE = FOOD_CATEGORY_TYPE;
   public FOOD_CATEGORY_TYPE_LABEL = FOOD_CATEGORY_TYPE_LABEL;
   public environment = environment;
+  public now = new Date();
 
   watch(sub) {
     this.watcherList.push(sub);
