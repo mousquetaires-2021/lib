@@ -1,10 +1,14 @@
 import { Injectable } from "@angular/core";
+import { BookingInterface } from "lib/interfaces/booking-interface";
+import { BehaviorSubject } from "rxjs";
 import { ServerService } from "../http-server/server.service";
 
 @Injectable({
   providedIn: "root",
 })
-export class BookingService {
+export class BookingService {  
+	waitingBookings: BehaviorSubject<BookingInterface[]> = new BehaviorSubject<BookingInterface[]>([]);
+
   constructor(private serverService: ServerService) {}
 
   getRestaurantStatus(restaurantId: number) {
@@ -90,5 +94,17 @@ export class BookingService {
     return this.serverService
       .post("booking/update-restaurant-booking-status", params)
       .then((data) => data.data || null);
+  }
+
+  getRestaurantWaitingBookings(restaurantId: number) {
+    return this.serverService
+      .get(`booking/get-restaurant-waiting/${restaurantId}`)
+      .then((data) => data.data || [])
+  }
+
+  getMonthlyCA(restaurantId: number) {
+    return this.serverService
+      .get(`booking/get-monthly-ca/${restaurantId}`)
+      .then((data) => data.data || [])
   }
 }
