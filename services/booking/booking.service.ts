@@ -105,4 +105,15 @@ export class BookingService {
   adminUpdateBookingStatus (params) {
     return this.serverService.put('booking/admin-update-status', params).then((data) => data.data || null)
   }
+
+  getAllDone () {
+    return this.serverService.get('booking/get-all-done').then((data) => data.data || [])
+  }
+
+  updateIsPayStatus (bookingId: number, status: number) {
+    return this.serverService.put('booking/update-is-pay-status', {
+      bookingId,
+      status,
+    })
+  }
 }

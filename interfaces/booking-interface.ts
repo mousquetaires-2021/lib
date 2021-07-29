@@ -1,5 +1,5 @@
-import { RestaurantInferface } from "./restaurant-interface";
-import { UserInterface } from "./user-interface";
+import { RestaurantInferface } from './restaurant-interface'
+import { UserInterface } from './user-interface'
 
 export interface BookingInterface {
   id?: number;
@@ -9,4 +9,5 @@ export interface BookingInterface {
   user?: UserInterface;
   rejection_raison?: string;
   restaurant?: RestaurantInferface;
+  is_pay_by_restaurant?: number;
 }
