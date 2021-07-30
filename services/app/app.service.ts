@@ -18,9 +18,9 @@ export class AppService {
         window.location.pathname + window.location.search;
     }
 
-	if(!message && cleanUrl) {
-		this.authService.redirectUrl = null
-	}
+    if (!message && cleanUrl) {
+      this.authService.redirectUrl = null;
+    }
 
     this.needAccountToView.next(message);
   }
