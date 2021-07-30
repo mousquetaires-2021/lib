@@ -205,14 +205,14 @@ img {
 	margin-right: 8px;
 
 	> div {
-		border: solid 0.5px fColor("primary") !important;
+		border: solid 1px fColor("primary") !important;
 		border-radius: 4px;
 		height: 48px !important;
 		color: #28195c;
 	}
 
 	&.ng-select-focused .ng-select-container {
-		border: solid 0.5px fColor("primary") !important;
+		border: solid 1px fColor("primary") !important;
 	}
 }
 
