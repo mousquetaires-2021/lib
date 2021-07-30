@@ -10,6 +10,7 @@ export class AppService {
   needAccountToView: BehaviorSubject<string> = new BehaviorSubject<string>(
     null
   );
+  audio = new Audio();
   constructor(private authService: AuthService) {}
 
   needAccount(message, cleanUrl = false) {
