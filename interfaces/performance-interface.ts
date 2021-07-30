@@ -14,4 +14,5 @@ export interface PerformanceInferface {
 	totalForRestaurant?: number;
 	totalCollectedTVA?: number;
 	paymentPending?: boolean;
+	nbBooking?: number;
 }
