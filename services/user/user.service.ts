@@ -171,4 +171,8 @@ export class UserService {
       reject('No device')
     })
   }
+
+  unsubsribeRestaurantUpdate(token) {
+    return this.serverService.put('users/unsubscribe-restaurant-update', { token })
+  }
 }
