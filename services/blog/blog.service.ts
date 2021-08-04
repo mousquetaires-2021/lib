@@ -36,4 +36,10 @@ export class BlogService {
       .get('blog/get-all-public')
       .then((data) => data.data || [])
   }
+
+  getArticle (blogId) {
+    return this.serverService
+      .get('blog/show/' + blogId)
+      .then((data) => data.data || null)
+  }
 }
