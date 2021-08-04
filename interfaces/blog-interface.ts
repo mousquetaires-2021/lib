@@ -7,4 +7,5 @@ export interface BlogInterface {
   status?: number;
   public_token?: string;
   slug?: string;
+  cover?: string;
 }
