@@ -11,8 +11,12 @@ export class AppService {
     null
   );
   audioIsAuthorized = false;
-  audio = new Audio();
-  constructor(private authService: AuthService) {}
+  audio = null;
+  constructor(private authService: AuthService) {
+    try {
+      this.audio = new Audio();
+    } catch(err) {}
+  }
 
   needAccount(message, cleanUrl = false) {
     if (message) {

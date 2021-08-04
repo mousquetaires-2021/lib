@@ -30,4 +30,10 @@ export class BlogService {
       .put('blog/admin-update-blog', params)
       .then((data) => data.data || null)
   }
+
+  getPublicAll () {
+    return this.serverService
+      .get('blog/get-all-public')
+      .then((data) => data.data || [])
+  }
 }
