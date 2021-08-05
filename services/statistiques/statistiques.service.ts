@@ -5,10 +5,16 @@ import { ServerService } from '../http-server/server.service'
   providedIn: 'root',
 })
 export class StatistiquesService {  
-	constructor (private serverService: ServerService) {}
+  constructor (private serverService: ServerService) {}
 
-	addStat (params) {
+  addStat (params) {
 	  return this.serverService
-	    .post(`statistiques/sent`, params)
-	}
+	    .post('statistiques/sent', params)
+  }
+
+  getTypes (types) {
+    return this.serverService
+		  .post('statistiques/get-types', { types })
+		  .then((data) => data.data || [])
+  }
 }
