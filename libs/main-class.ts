@@ -23,6 +23,7 @@ import {
   FOOD_CATEGORY_TYPE,
   FOOD_CATEGORY_TYPE_LABEL,
 } from 'lib/constants/foodTypes'
+import { BLOG_STATUS, BLOG_STATUS_LABEL } from 'lib/constants/blog'
 
 export class MainClass {
   watcherList: Subscription[] = [];
@@ -45,6 +46,8 @@ export class MainClass {
   public BOOKING_STATUS_LABEL = BOOKING_STATUS_LABEL;
   public FOOD_CATEGORY_TYPE = FOOD_CATEGORY_TYPE;
   public FOOD_CATEGORY_TYPE_LABEL = FOOD_CATEGORY_TYPE_LABEL;
+  public BLOG_STATUS_LABEL = BLOG_STATUS_LABEL;
+  public BLOG_STATUS = BLOG_STATUS;
   public environment = environment;
   public now = new Date();
 

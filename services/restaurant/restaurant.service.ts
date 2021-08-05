@@ -1,175 +1,179 @@
-import { Injectable } from "@angular/core";
-import { RestaurantCriterionsInterface } from "lib/interfaces/restaurant-criterions-interface";
-import { RestaurantInferface } from "lib/interfaces/restaurant-interface";
-import { BehaviorSubject } from "rxjs";
-import { ServerService } from "../http-server/server.service";
+import { Injectable } from '@angular/core'
+import { RestaurantCriterionsInterface } from 'lib/interfaces/restaurant-criterions-interface'
+import { RestaurantInferface } from 'lib/interfaces/restaurant-interface'
+import { BehaviorSubject } from 'rxjs'
+import { ServerService } from '../http-server/server.service'
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class RestaurantService {
-  restaurants: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+  restaurants: BehaviorSubject<RestaurantInferface[]> = new BehaviorSubject<RestaurantInferface[]>([]);
   restaurant: BehaviorSubject<RestaurantInferface> =
     new BehaviorSubject<RestaurantInferface>(null);
   criterions: BehaviorSubject<RestaurantCriterionsInterface> =
     new BehaviorSubject<RestaurantCriterionsInterface>(null);
 
-  constructor(private serverService: ServerService) {}
+  constructor (private serverService: ServerService) {}
 
-  getRestaurantDetails(params) {
+  getRestaurantDetails (params) {
     return this.serverService
-      .post("restaurants/get-details", params)
-      .then((data) => data.data || null);
+      .post('restaurants/get-details', params)
+      .then((data) => data.data || null)
   }
 
-  getRestaurant(id = null) {
+  getRestaurant (id = null) {
     if (id) {
       return this.serverService
-        .get("restaurants/get/" + id)
-        .then((data) => data.data || null);
+        .get('restaurants/get/' + id)
+        .then((data) => data.data || null)
     } else {
       return this.serverService
-        .get("restaurants/get-restaurant")
+        .get('restaurants/get-restaurant')
         .then((data) => {
-          this.restaurants.next(data.data || []);
-          return data.data || [];
-        });
+          this.restaurants.next(data.data || [])
+          return data.data || []
+        })
     }
   }
 
-  createRestaurant(params) {
+  createRestaurant (params) {
     return this.serverService
-      .post("restaurants/add-restaurant", params)
-      .then(() => this.getRestaurant());
+      .post('restaurants/add-restaurant', params)
+      .then(() => this.getRestaurant())
   }
 
-  updateRestaurant(restaurantId, params) {
-    return this.serverService.put("restaurants/update-restaurant", {
+  updateRestaurant (restaurantId, params) {
+    return this.serverService.put('restaurants/update-restaurant', {
       restaurantId,
       ...params,
-    });
+    })
   }
 
-  getRestaurants() {
+  getRestaurants () {
     return this.serverService
-      .get("restaurants/list")
-      .then((data) => data.data || []);
+      .get('restaurants/list')
+      .then((data) => data.data || [])
   }
 
-  adminUpdateRestaurant(params) {
-    return this.serverService.put("restaurants/admin-update", params);
+  adminUpdateRestaurant (params) {
+    return this.serverService.put('restaurants/admin-update', params)
   }
 
-  adminCreateRestaurant(params) {
-    return this.serverService.post("restaurants/admin-create", params);
+  adminCreateRestaurant (params) {
+    return this.serverService.post('restaurants/admin-create', params)
   }
 
-  searchRestaurant(params) {
+  searchRestaurant (params) {
     return this.serverService
-      .post("restaurants/search", params)
-      .then((data) => data.data || null);
+      .post('restaurants/search', params)
+      .then((data) => data.data || null)
   }
 
-  getCriterions(): Promise<RestaurantCriterionsInterface> {
+  getCriterions (): Promise<RestaurantCriterionsInterface> {
     if (this.criterions.getValue()) {
       return new Promise((resolve) => {
-        resolve(this.criterions.getValue());
-      });
+        resolve(this.criterions.getValue())
+      })
     }
 
     return this.serverService
-      .get("restaurants/criterions")
+      .get('restaurants/criterions')
       .then((data) => data.data || null)
       .then((data) => {
-        this.criterions.next(data);
-        return data;
-      });
+        this.criterions.next(data)
+        return data
+      })
   }
 
-  theOne({ latitude, longitude }) {
+  theOne ({ latitude, longitude }) {
     return this.serverService
-      .post("restaurants/the-one", { latitude, longitude })
-      .then((data) => data.data || []);
+      .post('restaurants/the-one', { latitude, longitude })
+      .then((data) => data.data || [])
   }
 
-  getCategories({ latitude, longitude }) {
+  getCategories ({ latitude, longitude }) {
     return this.serverService
-      .post("restaurants/get-categories", { latitude, longitude })
-      .then((data) => data.data || []);
+      .post('restaurants/get-categories', { latitude, longitude })
+      .then((data) => data.data || [])
   }
 
-  getRestaurantsArroundMe({ latitude, longitude }) {
+  getRestaurantsArroundMe ({ latitude, longitude }) {
     return this.serverService
-      .post("restaurants/get-arround-me", { latitude, longitude })
-      .then((data) => data.data || []);
+      .post('restaurants/get-arround-me', { latitude, longitude })
+      .then((data) => data.data || [])
   }
 
-  getFoodTypes(restaurantId) {
+  getFoodTypes (restaurantId) {
     return this.serverService
-      .get("restaurants/food-types/" + restaurantId)
-      .then((data) => data.data || []);
+      .get('restaurants/food-types/' + restaurantId)
+      .then((data) => data.data || [])
   }
 
-  createRestaurantAndAccount(params) {
+  createRestaurantAndAccount (params) {
     return this.serverService
-      .post("restaurants/create-restaurant-and-account", params)
+      .post('restaurants/create-restaurant-and-account', params)
       .then((data) => {
-        this.serverService.setToken(data.token);
-        return true;
-      });
+        this.serverService.setToken(data.token)
+        return true
+      })
   }
 
-  pauseRestaurationPreparations(restaurantId) {
+  pauseRestaurationPreparations (restaurantId) {
     return this.serverService.put(
-      "restaurants/pause-restauration-id/" + restaurantId
-    );
+      'restaurants/pause-restauration-id/' + restaurantId
+    )
   }
 
-  evaluate(restaurantId, note) {
+  evaluate (restaurantId, note) {
     return this.serverService
-      .put("restaurants/evaluate", { restaurantId, note })
-      .then((data) => data.data || null);
+      .put('restaurants/evaluate', { restaurantId, note })
+      .then((data) => data.data || null)
   }
 
-  sentAdminMessage(params) {
-    return this.serverService.post("restaurants/sent-admin-message", params);
+  sentAdminMessage (params) {
+    return this.serverService.post('restaurants/sent-admin-message', params)
   }
 
-  getMapRestaurants() {
+  sentAdminMessageToRestaurant (params) {
+    return this.serverService.post('restaurants/sent-admin-message-to-restaurants', params)
+  }
+
+  getMapRestaurants () {
     return this.serverService
-      .get("restaurants/map-list")
-      .then((data) => data.data || []);
+      .get('restaurants/map-list')
+      .then((data) => data.data || [])
   }
 
-  relanceMenuNotComplete(params) {
+  relanceMenuNotComplete (params) {
     return this.serverService.post(
-      "restaurants/sent-relance-mail-menu-not-complete",
+      'restaurants/sent-relance-mail-menu-not-complete',
       params
-    );
+    )
   }
 
-  getRushourStatus(restaurantId: number) {
+  getRushourStatus (restaurantId: number) {
     return this.serverService
-      .post("rushour/get-status", { restaurantId })
-      .then((data) => data.data || null);
+      .post('rushour/get-status', { restaurantId })
+      .then((data) => data.data || null)
   }
 
-  updateRushourStatus(restaurantId: number, clientId: string) {
-    return this.serverService.post("rushour/client_id", {
+  updateRushourStatus (restaurantId: number, clientId: string) {
+    return this.serverService.post('rushour/client_id', {
       restaurantId,
       clientId,
-    });
+    })
   }
 
-  getAll() {
+  getAll () {
     return this.serverService
-      .get("restaurants")
-      .then((data) => data.data || []);
+      .get('restaurants')
+      .then((data) => data.data || [])
   }
 
-  getRestaurantPreview(token) {
+  getRestaurantPreview (token) {
     return this.serverService
-      .get("restaurants/preview/" + token)
-      .then((data) => data.data || null);
+      .get('restaurants/preview/' + token)
+      .then((data) => data.data || null)
   }
 }
