@@ -42,6 +42,10 @@ input.ethics-ui {
 	&::placeholder {
 		opacity: 0.3;
 	}
+
+	&:disabled {
+		opacity: 0.5;
+	}
 }
 
 textarea.ethics-ui {
@@ -133,4 +137,8 @@ ng-select.ethics-ui {
 			border: 1px solid black;
 		}
 	}
+}
+
+.mat-date {
+	display: flex;
 }
