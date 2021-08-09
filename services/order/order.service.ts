@@ -25,6 +25,10 @@ export class OrderService {
 	  return this.serverService.put('orders/update-order-delivery', params).then((data) => data.data || null)
 	}
 
+	applyReduceCode (params) {
+	  return this.serverService.put('orders/apply-order-reduce-code', params).then((data) => data.data || null)
+	}
+
 	confirmOrder (orderId: number) {
 	  return this.serverService.post('orders/confirm-order', { order_id: orderId }).then((data) => data.data || null)
 	}

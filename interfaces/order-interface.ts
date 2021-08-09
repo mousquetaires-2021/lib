@@ -1,4 +1,5 @@
 import { DeliverProfilInterface } from './deliver-interface';
+import { DiscountcodesInterface } from './discountcodes-interface';
 import { RestaurantInferface } from './restaurant-interface';
 import { UserInterface } from './user-interface';
 
@@ -31,6 +32,8 @@ export interface OrderInferface {
 	order_latitude?: number;
 	delivery_code_confirmation?: string;
 	deliver?: DeliverProfilInterface;
+	discountcode?: DiscountcodesInterface;
+	totalDiscount?: number;
 }
 
 export interface ProductOrderInterface {
