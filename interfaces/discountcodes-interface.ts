@@ -12,4 +12,5 @@ export interface DiscountcodesInterface {
   enable?: boolean;
   date_limit?: Date;
   restaurant?: RestaurantInferface;
+  rejection_raison?: string;
 }
