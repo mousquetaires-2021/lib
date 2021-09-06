@@ -54,6 +54,7 @@ export interface RestaurantInferface {
 	public_token?: string;
 	notify_restaurant_new_order?: string;
 	nb_deliver_arround?: number;
+	sponsorship?: string;
 }
 
 export interface FoodTypeInterface {
