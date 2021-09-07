@@ -10,4 +10,5 @@ export interface BookingInterface {
   rejection_raison?: string;
   restaurant?: RestaurantInferface;
   is_pay_by_restaurant?: number;
+  heal_pass?: boolean;
 }
