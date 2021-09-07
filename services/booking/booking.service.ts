@@ -39,7 +39,7 @@ export class BookingService {
 	    .then((data) => data.data || null)
 	}
 
-	makeReservationDate (restaurantId: number, date: Date, nbPerson: number) {
+	makeReservationDate (restaurantId: number, date: Date, nbPerson: number, healPass: boolean) {
 	  const now = new Date()
 	  const d = new Date(date)
 	  if(d.getTime() < now.getTime()) {
@@ -48,7 +48,7 @@ export class BookingService {
 	  }
 
 	  return this.serverService
-	    .post('booking/make-reservation-date', { restaurantId, date, nbPerson })
+	    .post('booking/make-reservation-date', { restaurantId, date, nbPerson, healPass })
 	    .then((data) => data.data || null)
 	}
 
