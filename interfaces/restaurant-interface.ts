@@ -6,8 +6,6 @@ export interface RestaurantInferface {
 	photo?: string;
 	logo?: string;
 	status?: number;
-	siret?: string;
-	vat?: string;
 	email?: string;
 	phone?: string;
 	rib?: string;
@@ -55,6 +53,7 @@ export interface RestaurantInferface {
 	notify_restaurant_new_order?: string;
 	nb_deliver_arround?: number;
 	sponsorship?: string;
+	enterpriseId?: number;
 }
 
 export interface FoodTypeInterface {
