@@ -29,10 +29,6 @@ export class OrderService {
 	  return this.serverService.put('orders/apply-order-reduce-code', params).then((data) => data.data || null)
 	}
 
-	confirmOrder (orderId: number) {
-	  return this.serverService.post('orders/confirm-order', { order_id: orderId }).then((data) => data.data || null)
-	}
-
 	requestOrder (params) {
 	  return this.serverService.post('orders/request-order', params).then((data) => data.data || null)
 	}
@@ -91,5 +87,9 @@ export class OrderService {
 
 	removeOrderItem (orderLineId: number) {
 	  return this.serverService.put('orders/remove-order-item', { orderLineId }).then((data) => data.data || null)
+	}
+
+	selectOrderMethod(orderId: number, amount: number, paymentMethod) {
+		return this.serverService.put('orders/select-order-method', { orderId, amount, paymentMethod }).then((data) => data.data || null)
 	}
 }
