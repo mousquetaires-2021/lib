@@ -213,4 +213,12 @@ export class MainClass {
 
     alert('Copié')
   }
+
+  public formatPhone (phone) {
+    if(phone) {
+      phone = phone.replace(/\+33/g, "0");
+    }
+
+    return phone
+  }
 }
