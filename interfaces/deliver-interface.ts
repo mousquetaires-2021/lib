@@ -9,7 +9,7 @@ export interface DeliverProfilInterface {
 	deliver_way?: string;
 	deliver_zone?: string;
 	photo?: string;
-	siren?: string;
+	siret?: string;
 	vat_number?: string;
 	vat_pecent?: number;
 	photo_identity?: string;
@@ -22,4 +22,6 @@ export interface DeliverProfilInterface {
 	'user.email'?: string;
 	'user.phone'?: string;
 	user?: UserInterface;
+	rib?: string;
+	kbis?: string;
 }
