@@ -16,4 +16,5 @@ export interface UserInterface {
 	public_token?: string;
 	publicToken?: string;
 	newsletterRestaurant?: boolean;
+	newsletter?: boolean;
 }
