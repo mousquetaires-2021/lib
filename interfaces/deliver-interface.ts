@@ -24,4 +24,6 @@ export interface DeliverProfilInterface {
 	user?: UserInterface;
 	rib?: string;
 	kbis?: string;
+	paygreenId?: number;
+	paygreenError?: string;
 }
