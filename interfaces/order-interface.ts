@@ -34,6 +34,9 @@ export interface OrderInferface {
 	deliver?: DeliverProfilInterface;
 	discountcode?: DiscountcodesInterface;
 	totalDiscount?: number;
+	totalTransactionsSuccessed?: number;
+	totalAcceptableTRD?: number;
+	totalAvailableTRD?: number;
 }
 
 export interface ProductOrderInterface {
