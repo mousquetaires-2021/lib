@@ -15,4 +15,5 @@ export interface PerformanceInferface {
 	totalCollectedTVA?: number;
 	paymentPending?: boolean;
 	nbBooking?: number;
+	totalDiscount?: number;
 }

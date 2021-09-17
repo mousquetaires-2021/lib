@@ -14,5 +14,7 @@ export interface UserInterface {
 	phone?: string;
 	password?: string;
 	public_token?: string;
+	publicToken?: string;
 	newsletterRestaurant?: boolean;
+	newsletter?: boolean;
 }
