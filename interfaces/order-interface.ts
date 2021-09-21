@@ -32,6 +32,7 @@ export interface OrderInferface {
 	order_latitude?: number;
 	delivery_code_confirmation?: string;
 	deliver?: DeliverProfilInterface;
+	delivery_id?: number;
 	discountcode?: DiscountcodesInterface;
 	totalDiscount?: number;
 	totalTransactionsSuccessed?: number;
