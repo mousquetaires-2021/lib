@@ -28,4 +28,10 @@ export class PartnerService {
     return this.serverService
       .post('partners/create-partner', params)
   }
+
+  getMyPartnerships() {
+    return this.serverService
+      .get('partners/get-my-partnerships')
+      .then((data) => data.data || [])
+  }
 }

@@ -10,5 +10,7 @@ export interface PartnerInterface {
   endDate?: Date;
   status?: number;
   zoneActions?: string;
-  zoneActionsLabel? : string;
+  zoneActionsLabel? :string;
+  sumPrestation?: number;
+  nbPrestation?: number;
 }
