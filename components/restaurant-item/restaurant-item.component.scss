@@ -19,6 +19,7 @@
 		justify-content: flex-start;
 		background-color: fColor(cfarine);
 		flex: 1;
+		position: relative;
 
 		&.no-photo {
 			min-height: 64px;
@@ -82,8 +83,6 @@
 
 	.distance {
 		border-radius: 10px;
-		margin-left: 16px;
-		margin-bottom: 16px;
 		background-color: rgba(#f1f2f6, 0.7);
 		height: 35px;
 		line-height: 35px;
@@ -91,6 +90,23 @@
 		font-size: 11px;
 		font-weight: bold;
 		color: fColor(cblack);
+		position: absolute;
+		bottom: 16px;
+		left: 16px;
+	}
+
+	.cashback {
+		border-radius: 10px;
+		background-color: rgba(#f1f2f6, 0.7);
+		height: 35px;
+		line-height: 35px;
+		padding: 0 9px;
+		font-size: 11px;
+		font-weight: bold;
+		color: fColor(cblack);
+		position: absolute;
+		top: 16px;
+		left: 16px;
 	}
 }
 

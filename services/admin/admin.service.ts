@@ -6,13 +6,19 @@ import { ServerService } from '../http-server/server.service'
 })
 export class AdminService {
 
-  constructor(
+  constructor (
     private serverService: ServerService
   ) {}
 
-  getMonthlyCA() {
+  getMonthlyCA () {
     return this.serverService
       .get('admin/get-monthly-ca')
+      .then((data) => data.data || [])
+  }
+
+  getWaitingPayments () {
+    return this.serverService
+      .get('admin/get-waiting-payments')
       .then((data) => data.data || [])
   }
 }

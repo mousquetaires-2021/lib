@@ -1,3 +1,5 @@
+import { EnterpriseInterface } from "./enterprise-interface";
+
 export interface UserInterface {
 	email?: string;
 	id?: number;
@@ -17,4 +19,5 @@ export interface UserInterface {
 	publicToken?: string;
 	newsletterRestaurant?: boolean;
 	newsletter?: boolean;
+	enterprise?: EnterpriseInterface;
 }
