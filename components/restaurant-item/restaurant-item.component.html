@@ -1,6 +1,7 @@
 <div class="image" [class.no-photo]="restaurant.photo ? false : true"
   [ngStyle]="restaurant.photo ? {'background-image': 'url('+restaurant.photo+')'} : {}">
   <div *ngIf="restaurant.distance" class="distance">{{getStringDistance(restaurant.distance)}}</div>
+  <div *ngIf="restaurant.cashback" class="cashback">Cash</div>
 </div>
 <div class="title">
   <div class="name">{{restaurant.name}}</div>

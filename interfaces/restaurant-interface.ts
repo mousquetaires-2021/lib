@@ -1,3 +1,4 @@
+import { CashbackInterface } from './cashback-interface';
 import { UserInterface } from './user-interface';
 
 export interface RestaurantInferface {
@@ -54,6 +55,7 @@ export interface RestaurantInferface {
 	nb_deliver_arround?: number;
 	sponsorship?: string;
 	enterpriseId?: number;
+	cashback?: CashbackInterface;
 }
 
 export interface FoodTypeInterface {
