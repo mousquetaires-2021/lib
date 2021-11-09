@@ -12,6 +12,7 @@ export class AppService {
   );
   audioIsAuthorized = false;
   audio = null;
+  appComponent = null;
   constructor(private authService: AuthService) {
     try {
       this.audio = new Audio();

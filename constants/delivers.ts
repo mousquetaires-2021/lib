@@ -1,7 +1,8 @@
 export const DELIVER_STATUS = {
 	0: 'Profil à compléter',
 	1: 'En validation par Delivreetic',
-	2: 'Prêt à livrer'
+	2: 'Prêt à livrer',
+	3: 'Profil rejeté'
 };
 
 export const DELIVER_STATUS_LABEL = Object.entries(DELIVER_STATUS).map((key, value) => ({
