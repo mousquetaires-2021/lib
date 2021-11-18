@@ -23,6 +23,7 @@ export interface DeliverProfilInterface {
 	'user.phone'?: string;
 	user?: UserInterface;
 	rib?: string;
+	bic?: string;
 	kbis?: string;
 	paygreenId?: number;
 	paygreenError?: string;
