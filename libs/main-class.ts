@@ -221,4 +221,8 @@ export class MainClass {
 
     return phone
   }
+
+  public ngModelCompareDate (a: Date, b: Date) {
+    return a.toString() == b.toString()
+  }
 }
