@@ -5,6 +5,7 @@ export interface EnterpriseInterface {
   vat?: string;
   rib?: string;
   bic?: string;
+  fullAddress?: string;
   addressNumber?: string;
   addressStreetName?: string;
   addressPostalCode?: string;
