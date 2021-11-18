@@ -1,4 +1,4 @@
-import { UserInterface } from './user-interface';
+import { UserInterface } from './user-interface'
 
 export interface DeliverProfilInterface {
 	id?: number;
@@ -23,6 +23,7 @@ export interface DeliverProfilInterface {
 	'user.phone'?: string;
 	user?: UserInterface;
 	rib?: string;
+	bic?: string;
 	kbis?: string;
 	paygreenId?: number;
 	paygreenError?: string;
