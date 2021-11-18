@@ -1,8 +1,10 @@
 export interface EnterpriseInterface {
   id?: number;
+  name?: string;
   siret?: string;
   vat?: string;
   rib?: string;
+  bic?: string;
   addressNumber?: string;
   addressStreetName?: string;
   addressPostalCode?: string;

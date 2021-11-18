@@ -13,9 +13,21 @@ export class EnterpriseService {
       .then((data) => data.data || null)
   }
 
+  getAdminDetails (enterpriseId: number) {
+    return this.serverService
+      .get('enterprises/get-admin-details/' + enterpriseId)
+      .then((data) => data.data || null)
+  }
+
   updateDetails (params) {
     return this.serverService
       .put('enterprises/update-details', params)
       .then((data) => data.data || null)
+  }
+
+  getEnterprises () {
+    return this.serverService
+      .get('enterprises/list')
+      .then((data) => data.data || [])
   }
 }
