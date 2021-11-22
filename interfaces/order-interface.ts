@@ -38,6 +38,8 @@ export interface OrderInferface {
 	totalTransactionsSuccessed?: number;
 	totalAcceptableTRD?: number;
 	totalAvailableTRD?: number;
+	preparationDate?: string;
+	delivery_date?: Date;
 }
 
 export interface ProductOrderInterface {
