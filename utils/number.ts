@@ -5,3 +5,7 @@ export const transformToFloat = (item) => {
 
 	return item;
 };
+
+export function fixDecimal (value, plus = 100) {
+  return Math.round(value * plus) / plus
+}
