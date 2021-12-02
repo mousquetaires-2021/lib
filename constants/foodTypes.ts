@@ -61,7 +61,6 @@ export const FOOD_CATEGORY_TYPE = {
 	49: 'Tapas',
 	50: 'Antillais',
 	51: 'Auvergnat',
-	52: 'Burger',
 	53: 'Barbecue',
 	54: 'Bistronomique',
 	55: 'Buns',
@@ -99,13 +98,16 @@ export const FOOD_CATEGORY_TYPE = {
 	87: 'Tacos',
 	88: 'Traiteur',
 	89: 'Turque',
-	90: 'Végan'
+	90: 'Végan',
+	91: 'Vins et spiritueux',
+	93: 'Épicerie',
+	94: 'Alcool',
 };
 
 export const FOOD_CATEGORY_TYPE_LABEL = sortBy(
-	Object.entries(FOOD_CATEGORY_TYPE).map((key, value) => ({
-		id: value,
-		label: FOOD_CATEGORY_TYPE[value]
+	Object.values(FOOD_CATEGORY_TYPE).map((value, index) => ({
+		id: index,
+		label: value
 	})),
 	[ 'label' ]
 );
