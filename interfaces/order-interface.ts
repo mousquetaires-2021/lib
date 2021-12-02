@@ -40,6 +40,7 @@ export interface OrderInferface {
 	totalAvailableTRD?: number;
 	preparationDate?: string;
 	delivery_date?: Date;
+	transactions?: any[];
 }
 
 export interface ProductOrderInterface {
