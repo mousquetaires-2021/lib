@@ -72,6 +72,8 @@
 	}
 
 	.eat-options {
+		display: flex;
+		align-items: center;
 		margin-top: 4px;
 
 		i {
@@ -79,34 +81,30 @@
 			font-size: 14px;
 			margin-right: 8px;
 		}
-	}
 
-	.distance {
-		border-radius: 10px;
-		background-color: rgba(#f1f2f6, 0.7);
-		height: 35px;
-		line-height: 35px;
-		padding: 0 9px;
-		font-size: 11px;
-		font-weight: bold;
-		color: fColor(cblack);
-		position: absolute;
-		bottom: 16px;
-		left: 16px;
+		.distance {
+			margin-right: 16px;
+			font-size: 11px;
+			color: fColor(cmediumgray);
+		}
 	}
 
 	.cashback {
 		border-radius: 10px;
-		background-color: rgba(#f1f2f6, 0.7);
+		background-color: rgba(fColor(ckale), 0.5);
 		height: 35px;
 		line-height: 35px;
 		padding: 0 9px;
 		font-size: 11px;
 		font-weight: bold;
-		color: fColor(cblack);
+		color: white;
 		position: absolute;
-		top: 16px;
+		bottom: 16px;
 		left: 16px;
+
+		img {
+			margin-right: 4px;
+		}
 	}
 }
 

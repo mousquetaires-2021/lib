@@ -1,7 +1,8 @@
 <div class="image" [class.no-photo]="restaurant.photo ? false : true"
   [ngStyle]="restaurant.photo ? {'background-image': 'url('+restaurant.photo+')'} : {}">
-  <div *ngIf="restaurant.distance" class="distance">{{getStringDistance(restaurant.distance)}}</div>
-  <div *ngIf="restaurant.cashback" class="cashback">Cash</div>
+  <div *ngIf="restaurant.cashback" class="cashback">
+    <img src="/lib-assets/cashback-white.png" /> {{ cashbackString }}
+  </div>
 </div>
 <div class="title">
   <div class="name">{{restaurant.name}}</div>
@@ -13,6 +14,7 @@
   {{convertPriceToDollars(restaurant.average_pricing)}}
 </div>
 <div class="eat-options">
+  <div *ngIf="restaurant.distance" class="distance">{{getStringDistance(restaurant.distance)}}</div>
   <i class="material-icons"
     *ngIf="restaurant.outOffdelivery === false && restaurant.delivery && restaurant.distance <= 6">directions_bike</i>
   <i class="material-icons" *ngIf="restaurant.delivery && restaurant.distance === undefined">directions_bike</i>

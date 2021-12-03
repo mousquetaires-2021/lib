@@ -24,3 +24,16 @@ export const convertDateOpeningHourToInterface = (restaurant: RestaurantInferfac
 
 	return opening;
 };
+
+export const getCachbackShopString = (cachbackObject) => {
+	let stringValues = '';
+	if(cachbackObject.reducePercent) {
+		stringValues += '10% '
+	}
+
+	if(cachbackObject.reduceValue) {
+		stringValues += '10€ '
+	}
+
+	return stringValues;
+}

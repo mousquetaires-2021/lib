@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges } from "@angular/core";
 import { RestaurantInferface } from "lib/interfaces/restaurant-interface";
 import { MainClass } from "lib/libs/main-class";
+import { getCachbackShopString } from "lib/utils/restaurantScripts";
 
 @Component({
   selector: "restaurant-item",
@@ -10,6 +11,8 @@ import { MainClass } from "lib/libs/main-class";
 export class RestaurantItemComponent extends MainClass implements OnChanges {
   @Input() restaurant: RestaurantInferface;
   type: string = "";
+  cashbackString: string = "";
+
   constructor() {
     super();
   }
@@ -20,5 +23,7 @@ export class RestaurantItemComponent extends MainClass implements OnChanges {
     } else {
       this.type = "";
     }
+
+    this.cashbackString = getCachbackShopString(this.restaurant.cashback);
   }
 }
