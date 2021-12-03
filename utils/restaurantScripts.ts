@@ -37,3 +37,22 @@ export const getCachbackShopString = (cachbackObject) => {
 
 	return stringValues;
 }
+
+export const getCachbackLongString = (cachbackObject) => {
+	let stringValues = '';
+	if(cachbackObject.reducePercent) {
+		stringValues += '10% '
+	}
+
+	if(cachbackObject.reduceValue) {
+		stringValues += '10€ '
+	}
+
+	stringValues += 'sur votre porte-monnaie ';
+
+	if(cachbackObject.minimumTotal) {
+		stringValues += `avec un panier minimum de ${cachbackObject.minimumTotal}€`;
+	}
+
+	return stringValues;
+}
