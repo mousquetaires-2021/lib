@@ -89,8 +89,8 @@ export class OrderService {
 	  return this.serverService.put('orders/remove-order-item', { orderLineId }).then((data) => data.data || null)
 	}
 
-	selectOrderMethod (orderId: number, amount: number, paymentMethod) {
-	  return this.serverService.put('orders/select-order-method', { orderId, amount, paymentMethod }).then((data) => data.data || null)
+	selectOrderMethod (orderId: number, amount: number, paymentMethod, password: string) {
+	  return this.serverService.put('orders/select-order-method', { orderId, amount, paymentMethod, password }).then((data) => data.data || null)
 	}
 
 	confirmOderPayement (ordersId: number[], type: string) {
