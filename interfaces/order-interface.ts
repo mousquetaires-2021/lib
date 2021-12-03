@@ -1,3 +1,4 @@
+import { CashbackInterface } from './cashback-interface';
 import { DeliverProfilInterface } from './deliver-interface';
 import { DiscountcodesInterface } from './discountcodes-interface';
 import { RestaurantInferface } from './restaurant-interface';
@@ -41,6 +42,9 @@ export interface OrderInferface {
 	preparationDate?: string;
 	delivery_date?: Date;
 	transactions?: any[];
+	cashbackSum?: number;
+	cashback?: CashbackInterface;
+	userWallet?: number;
 }
 
 export interface ProductOrderInterface {
