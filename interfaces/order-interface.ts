@@ -45,6 +45,7 @@ export interface OrderInferface {
 	cashbackSum?: number;
 	cashback?: CashbackInterface;
 	userWallet?: number;
+	totalAvailableWALLET?: number;
 }
 
 export interface ProductOrderInterface {
