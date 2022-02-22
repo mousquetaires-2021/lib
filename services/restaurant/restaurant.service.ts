@@ -22,6 +22,12 @@ export class RestaurantService {
       .then((data) => data.data || null)
   }
 
+  getRestaurantDetailsByToken (params) {
+    return this.serverService
+      .post('restaurants/get-details-token', params)
+      .then((data) => data.data || null)
+  }
+
   getRestaurant (id = null) {
     if (id) {
       return this.serverService

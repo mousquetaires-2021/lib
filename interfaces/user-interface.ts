@@ -20,4 +20,7 @@ export interface UserInterface {
 	newsletterRestaurant?: boolean;
 	newsletter?: boolean;
 	enterprise?: EnterpriseInterface;
+	businessName?: string; // personnal entreprise account for order invoice
+	businessSiren?: string; // personnal entreprise account for order invoice
+	businessVAT?: string; // personnal entreprise account for order invoice
 }
