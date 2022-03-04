@@ -3,7 +3,6 @@ button {
 	line-height: 51px;
 	border-radius: 16px;
 	color: fColor(cblack);
-	font-weight: 500;
 	border: none;
 	padding: 0 24px;
 	cursor: pointer;
@@ -14,13 +13,13 @@ button {
 	}
 
 	&.red {
-		background-color: rgba(fColor(cred), 0.2);
+		background-color: fColor(cred);
 		color: fColor(cred);
 	}
 
 	&.green {
-		background-color: rgba(fColor(ckale), 0.2);
-		color: fColor(ckale);
+		background-color: fColor(cgreen);
+		color: white;
 	}
 
 	&.blue {
@@ -70,10 +69,11 @@ button {
 	}
 
 	&.s {
-		font-size: 14px;
-		height: 46px;
-		line-height: 46px;
-		padding: 0 16px;
+		font-size: 20px;
+		height: 38px;
+		line-height: 38px;
+		padding: 0 10px;
+		border-radius: 10px;
 	}
 
 	&.xs {

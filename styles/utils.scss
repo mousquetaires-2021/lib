@@ -1,4 +1,9 @@
 $colors: (
+	// V2
+	cgreen: #047774,
+	cyellow: #FBAF0E,
+
+	// OLD
 	primary: #fbb217,
 	cblack: #121212,
 	cblacklight: #414141,
@@ -18,7 +23,7 @@ $colors: (
 	cmango: #fbb217,
 	cjambon: #eacdcd,
 	cbrown: #ee9222,
-	cneige: #FFFF
+	cneige: #FFFF,
 );
 @function fColor($key: "cprimary") {
 	@return map-get($colors, $key);
