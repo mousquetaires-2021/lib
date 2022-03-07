@@ -41,7 +41,6 @@ export interface RestaurantInferface {
 	website?: string;
 	delivery?: number;
 	take_away?: number;
-	eat_in?: number;
 	distance?: number;
 	can_evaluate?: boolean;
 	user_evaluation?: number;
@@ -52,6 +51,7 @@ export interface RestaurantInferface {
 	nb_place_for_eat?: number;
 	outOffdelivery?: boolean;
 	public_token?: string;
+	publicToken?: string;
 	notify_restaurant_new_order?: string;
 	nb_deliver_arround?: number;
 	sponsorship?: string;
