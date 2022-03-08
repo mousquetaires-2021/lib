@@ -4,6 +4,7 @@ import { UserInterface } from './user-interface';
 export interface RestaurantInferface {
 	id?: number;
 	name?: string;
+	mainType?: string;
 	photo?: string;
 	logo?: string;
 	status?: number;

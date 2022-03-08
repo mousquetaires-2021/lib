@@ -171,6 +171,19 @@ export class RestaurantService {
     })
   }
 
+  getZeltyAPI (restaurantId: number) {
+    return this.serverService
+      .post('zelty/get-api', { restaurantId })
+      .then((data) => data.data)
+  }
+
+  updateZeltyApiKey (restaurantId: number, clientId: string) {
+    return this.serverService.post('zelty/update-client-id', {
+      restaurantId,
+      clientId,
+    })
+  }
+
   getAll () {
     return this.serverService
       .getWithoutError('restaurants')
