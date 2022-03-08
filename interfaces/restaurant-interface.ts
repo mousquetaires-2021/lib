@@ -1,10 +1,12 @@
 import { CashbackInterface } from './cashback-interface';
+import { CategoryInterface } from './category-interface';
 import { UserInterface } from './user-interface';
 
 export interface RestaurantInferface {
 	id?: number;
 	name?: string;
 	mainType?: string;
+	mainTypeSelected?: CategoryInterface;
 	photo?: string;
 	logo?: string;
 	status?: number;
