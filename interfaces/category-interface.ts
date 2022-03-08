@@ -3,4 +3,5 @@ export interface CategoryInterface {
   label?: string;
   count?: number;
   key?: string;
+  color?: string;
 }
