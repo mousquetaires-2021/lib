@@ -104,9 +104,9 @@ export class RestaurantService {
       .then((data) => data.data || [])
   }
 
-  getRestaurantsArroundMe ({ latitude, longitude }) {
+  getRestaurantsArroundMe ({ latitude, longitude, mainType }) {
     return this.serverService
-      .post('restaurants/get-arround-me', { latitude, longitude })
+      .post('restaurants/get-arround-me', { latitude, longitude, mainType})
       .then((data) => data.data || [])
   }
 

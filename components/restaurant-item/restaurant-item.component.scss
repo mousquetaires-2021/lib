@@ -1,114 +1,74 @@
 @import "../../styles/utils.scss";
 
 :host {
-	padding: 8px 8px 8px 8px;
-	margin: 32px;
-	border-radius: 16px;
-	background-color: white;
-	display: flex;
-	flex-direction: column;
-	box-shadow: 0px 10px 40px rgba(31, 56, 50, 0.1);
-	
-	.image {
-		background-size: cover;
-		background-position: center;
-		min-height: 126px;
-		border-radius: 10px;
-		display: flex;
-		align-items: flex-end;
-		justify-content: flex-start;
-		background-color: fColor(cfarine);
-		flex: 1;
-		position: relative;
+  padding: 6px;
+  border-top-left-radius: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin-top: 6px;
+  box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.1);
+	font-weight: 300;
 
-		&.no-photo {
-			min-height: 64px;
+  .merchant-preview {
+		display: flex;
+
+		> div {
+			flex: 1;
 		}
-	}
 
-	.title {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	.name {
-		font-weight: 600;
-		font-size: 16px;
-		color: fColor(cblack);
-		margin-top: 11px;
-		margin-bottom: 3px;
-	}
-
-	.sub-name {
-		font-size: 11px;
-		text-transform: capitalize;
-		color: fColor(cmediumgray);
-		display: flex;
-
-		span {
-			max-width: 80%;
-			display: inline-block;
-			overflow: hidden;
-			white-space: nowrap;
-			text-overflow: ellipsis;
-			margin-right: 4px;
-		}
-	}
-
-	.note {
-		font-weight: 600;
-		font-size: 11px;
-		color: fColor(cblack);
-		align-items: center;
-		display: flex;
-		margin-top: 7px;
-		min-width: 35px;
-
-		img {
-			margin-right: 4px;
-			position: relative;
-			top: -2px;
-		}
-	}
-
-	.eat-options {
-		display: flex;
-		align-items: center;
-		margin-top: 4px;
-
-		i {
-			color: fColor(cmediumgray);
-			font-size: 14px;
+    .image {
+      background-size: cover;
+      background-position: center;
+      border-top-left-radius: 20px;
+			min-height: 140px;
 			margin-right: 8px;
+    }
+
+		.quick-preview {
+			display: flex;
+
+			.logo {
+				flex: 1;
+				height: 76px;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			.evaluation {
+				flex: 1;
+				text-align: center;
+
+				img {
+					margin-bottom: 12px;
+					margin-top: 4px;
+				}
+
+				p {
+					font-size: 10px;
+				}
+			}
 		}
 
-		.distance {
-			margin-right: 16px;
-			font-size: 11px;
-			color: fColor(cmediumgray);
+		.description {
+			margin-top: 20px;
+
+			p {
+				color: fColor(cgray);
+				font-size: 10px;
+			}
 		}
-	}
+  }
 
-	.cashback {
-		border-radius: 10px;
-		background-color: rgba(fColor(ckale), 0.5);
-		height: 35px;
-		line-height: 35px;
-		padding: 0 9px;
-		font-size: 11px;
-		font-weight: bold;
-		color: white;
-		position: absolute;
-		bottom: 16px;
-		left: 16px;
+  .title {
+    display: flex;
+    justify-content: space-between;
+		padding: 9px;
 
-		img {
-			margin-right: 4px;
+		.name {
+			font-size: 18px;
+			color: fColor(cgreen);
 		}
-	}
-}
-
-.in-comming {
-	font-size: 14px;
-	color: fColor(cblack);
+  }
 }

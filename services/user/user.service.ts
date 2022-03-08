@@ -11,19 +11,33 @@ import { RestaurantService } from '../restaurant/restaurant.service'
 export class UserService {
   token: BehaviorSubject<string> = new BehaviorSubject<string>(null);
   user: BehaviorSubject<UserInterface> = new BehaviorSubject<UserInterface>(null);
-  position: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  position: BehaviorSubject<any> = new BehaviorSubject<any>(this.getPositionFromLocal());
 
   constructor (
     private serverService: ServerService,
     private restaurantService: RestaurantService
   ) {
     this.token.subscribe((token) => {
-      console.log('TOKEN', token)
-      this.updateNotificationsToken()
-    })
+      console.log('TOKEN', token);
+      this.updateNotificationsToken();
+    });
     this.position.subscribe(() => {
-      this.updateNotificationsToken()
-    })
+      this.updateNotificationsToken();
+      this.savePositionToLocal();
+    });
+  }
+
+  savePositionToLocal() {
+    localStorage.setItem('user-position', JSON.stringify(this.position.getValue()));
+  }
+
+  getPositionFromLocal() {
+    const getItem = localStorage.getItem('user-position');
+    if(getItem) {
+      return JSON.parse(getItem);
+    }
+
+    return null;
   }
 
   setUser (user) {
