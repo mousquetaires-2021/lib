@@ -21,13 +21,12 @@
       <p>{{ type }}</p>
       <p>{{convertPriceToDollars(restaurant.average_pricing)}}</p>
       <p *ngIf="restaurant.distance">{{getStringDistance(restaurant.distance)}}</p>
+      <p *ngIf="restaurant.cashback" class="cashback">
+        <i class="material-icons">euro</i>cashback {{ cashbackString }}
+      </p>
     </div>
   </div>
 </div>
 <div class="title">
   <div class="name">{{ restaurant.name }}</div>
 </div>
-
-<!-- <div *ngIf="restaurant.cashback" class="cashback">
-      <img src="/lib-assets/cashback-white.png" /> {{ cashbackString }}
-    </div> -->
