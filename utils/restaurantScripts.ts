@@ -52,11 +52,11 @@ export const getCachbackShopString = (cachbackObject) => {
 export const getCachbackLongString = (cachbackObject) => {
   let stringValues = "";
   if (cachbackObject && cachbackObject.reducePercent) {
-    stringValues += "10% ";
+    stringValues += `${cachbackObject.reducePercent}% `;
   }
 
   if (cachbackObject && cachbackObject.reduceValue) {
-    stringValues += "10€ ";
+    stringValues += `${cachbackObject.reduceValue}€ `;
   }
 
   if (stringValues) {

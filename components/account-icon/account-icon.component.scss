@@ -1,5 +1,17 @@
 @import "../../styles/utils.scss";
 
+:host.large {
+	a {
+		height: 64px;
+		width: 74px;
+
+		> span {
+			height: 58px;
+			width: 68px;
+		}
+	}
+}
+
 a {
 	display: inline-block;
 	height: 42px;
@@ -15,10 +27,12 @@ a {
 	}
 
 	> span {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background: fColor(cgreenlight);
+		display: block;
+		background-color: fColor(cgreenlight);
+		background-image: url('/lib-assets/icon-profil.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 45%;
 		-webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
   	clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
 		height: 36px;

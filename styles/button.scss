@@ -79,4 +79,13 @@ button {
 	&.xs {
 		font-size: 11px;
 	}
+
+	&.small {
+		height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    padding: 0 4px;
+    border-radius: 5px;
+    border: none;
+	}
 }

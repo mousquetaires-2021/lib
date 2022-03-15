@@ -1,17 +1,12 @@
 <div class="merchant-preview">
-  <div class="image" [ngStyle]="
-      restaurant.photo
-        ? { 'background-image': 'url(' + restaurant.photo + ')' }
-        : {}
-    ">
+  <div class="image"
+    [ngStyle]="{ 'background-color': restaurant && restaurant.mainTypeSelected && restaurant.mainTypeSelected.color, 'background-image': 'url(' + restaurant.photo + ')' }">
   </div>
   <div>
     <div class="quick-preview">
-      <div class="logo" [ngStyle]="
-      restaurant.logo
-        ? { 'background-image': 'url(' + restaurant.logo + ')' }
-        : {}
-    "></div>
+      <div class="logo"
+        [ngStyle]="{ 'background-color': restaurant && restaurant.mainTypeSelected && restaurant.mainTypeSelected.color, 'background-image': 'url(' + restaurant.logo + ')' }">
+      </div>
       <div class="evaluation" *ngIf="restaurant.average_evaluation">
         <img src="/lib-assets/yellow-star-outline.svg" />
         <p>{{ restaurant.average_evaluation }}/5</p>
