@@ -5,3 +5,8 @@ export function shuffle(a) {
 	}
 	return a;
 }
+
+export const QUANTITY_ARRAY = [];
+for(let i = 0; i <= 20; i++) {
+	QUANTITY_ARRAY.push(i);
+}

@@ -25,6 +25,7 @@ import {
 } from 'lib/constants/foodTypes'
 import { BLOG_STATUS, BLOG_STATUS_LABEL } from 'lib/constants/blog'
 import { MAIN_CATEGORY_LABEL } from 'lib/constants/categories'
+import { QUANTITY_ARRAY } from 'lib/utils/array'
 
 export class MainClass {
   watcherList: Subscription[] = [];
@@ -50,6 +51,7 @@ export class MainClass {
   public BLOG_STATUS_LABEL = BLOG_STATUS_LABEL;
   public BLOG_STATUS = BLOG_STATUS;
   public MAIN_CATEGORY_LABEL = MAIN_CATEGORY_LABEL;
+  public QUANTITY_ARRAY = QUANTITY_ARRAY;
   public environment = environment;
   public now = new Date();
 
